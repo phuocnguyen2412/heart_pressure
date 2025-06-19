@@ -1,2 +1,9 @@
 numpy
 h5py
+fastapi
+matplotlib
+scikit-learn
+opencv-python
+scipy
+torch
+tqdm

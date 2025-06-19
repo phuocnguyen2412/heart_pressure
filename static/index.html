@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Quay Video PPG & Upload</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 400px; margin: 20px auto; }
+        video { width: 100%; border: 1px solid #ccc; margin-bottom: 10px; }
+        button { margin: 5px 0; }
+    </style>
 </head>
 <body>
-$END$
+<h2>Quay Video PPG</h2>
+<video id="preview" autoplay playsinline></video>
+<br>
+<button id="startBtn">Bắt đầu quay</button>
+<button id="stopBtn" disabled>Kết thúc</button>
+
+<h3>Video đã quay</h3>
+<video id="recorded" controls></video>
+<br>
+<button id="uploadBtn" disabled>Upload tới API</button>
+<div id="result"></div>
+
+<script>
+    let mediaRecorder;
+    let recordedBlobs = [];
+    let stream;
+
+    const preview = document.getElementById('preview');
+    const recorded = document.getElementById('recorded');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const result = document.getElementById('result');
+
+    // Lấy camera (ưu tiên camera sau)
+    async function initCamera() {
+        try {
+            stream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: "environment" }, // "user" cho camera trước, "environment" cho sau
+                audio: false
+            });
+            preview.srcObject = stream;
+        } catch (e) {
+            alert('Không thể mở camera: ' + e.message);
+        }
+    }
+
+    initCamera();
+
+    startBtn.onclick = () => {
+        recordedBlobs = [];
+        let options = { mimeType: 'video/webm;codecs=vp9' };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            options = { mimeType: 'video/webm;codecs=vp8' };
+            if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                options = { mimeType: 'video/webm' };
+                if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                    options = { mimeType: '' };
+                }
+            }
+        }
+        try {
+            mediaRecorder = new MediaRecorder(stream, options);
+        } catch (e) {
+            alert('MediaRecorder error: ' + e);
+            return;
+        }
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data && event.data.size > 0) recordedBlobs.push(event.data);
+        };
+        mediaRecorder.onstop = () => {
+            const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
+            recorded.src = window.URL.createObjectURL(superBuffer);
+            uploadBtn.disabled = false;
+        };
+        mediaRecorder.start();
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+        uploadBtn.disabled = true;
+    };
+
+    stopBtn.onclick = () => {
+        mediaRecorder.stop();
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+    };
+
+    uploadBtn.onclick = async () => {
+        const blob = new Blob(recordedBlobs, { type: 'video/webm' });
+        const formData = new FormData();
+        formData.append('file', blob, 'ppg_video.webm');
+
+        result.innerHTML = "Đang upload...";
+        try {
+            const response = await fetch('http://localhost:8000/upload_ppg', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            console.log(data);
+            result.innerHTML = `<b>Kết quả API:</b> <br>Systolic: ${data.systolic}<br>Diastolic: ${data.diastolic}`;
+        } catch (err) {
+            result.innerHTML = "Lỗi upload hoặc lỗi API!";
+        }
+    };
+</script>
 </body>
 </html>

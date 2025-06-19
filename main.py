@@ -1,13 +1,84 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
+from scipy.signal import resample
+
+import cv2
+import numpy as np
+import tempfile
+import os
+
+from matplotlib import pyplot as plt
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/upload_ppg")
+async def upload_ppg(file: UploadFile = File(...)):
+    # Lưu file tạm
+    suffix = os.path.splitext(file.filename)[1]
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp_video:
+        temp_video.write(await file.read())
+        temp_path = temp_video.name
 
+    # Xử lý video để trích xuất tín hiệu PPG
+    roi = (100, 100, 200, 200)
+    ppg_signal = extract_ppg_from_video(temp_path, roi=roi)
+    cap = cv2.VideoCapture(temp_path)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    cap.release()
+    print("Extracted PPG Signal:", ppg_signal.shape)
+    ppg_signal_125hz = resample_ppg(ppg_signal, original_fps=fps, target_fps=125)
+    segments = split_segments(ppg_signal_125hz, segment_length=875)
+    print("Resampled PPG Signal:", segments.shape)
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+    # Tính toán huyết áp (giả lập)
+    systolic, diastolic = estimate_blood_pressure(ppg_signal)
+
+    # Xóa file tạm
+    os.remove(temp_path)
+
+    # Trả kết quả về FE
+    return JSONResponse({"systolic": systolic, "diastolic": diastolic})
+
+def extract_ppg_from_video(video_path, roi=(100, 100, 200, 200), plot_ppg=True):
+    cap = cv2.VideoCapture(video_path)
+    ppg_signal = []
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        x1, y1, x2, y2 = roi
+        roi_frame = frame[y1:y2, x1:x2, 1]
+        mean_val = np.mean(roi_frame)
+        ppg_signal.append(mean_val)
+    cap.release()
+    ppg_signal = np.array(ppg_signal)
+
+    if plot_ppg:
+        plt.figure(figsize=(10,4))
+        plt.plot(ppg_signal)
+        plt.title("Extracted PPG Signal")
+        plt.xlabel("Frame")
+        plt.ylabel("Mean ROI Value (Green Channel)")
+        plt.show()
+
+    return ppg_signal
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
+def split_segments(ppg_signal, segment_length=875):
+    n_segments = len(ppg_signal) // segment_length
+    segments = ppg_signal[:n_segments*segment_length].reshape((n_segments, segment_length))
+    return segments
+
+def resample_ppg(ppg_signal, original_fps, target_fps=125):
+    n_points = int(len(ppg_signal) * target_fps / original_fps)
+    return resample(ppg_signal, n_points)
+
+def estimate_blood_pressure(ppg_signal):
+    # Đây là bước áp dụng thuật toán ML/AI hoặc công thức tính toán
+    # Ở đây placeholder: đưa ra giá trị giả lập
+    systolic = 120 + np.random.randint(-10, 10)
+    diastolic = 80 + np.random.randint(-5, 5)
+    return systolic, diastolic
