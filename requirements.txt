@@ -7,3 +7,7 @@ opencv-python
 scipy
 torch
 tqdm
+pandas
+yaml
+pyyaml
+joblib

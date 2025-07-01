@@ -52,7 +52,7 @@ class ConvNet(nn.Module):
         return out
 
 learning_rate = 0.001
-batch_size = 256
+batch_size = 512
 if __name__ == '__main__':
     train_dataset_sbp = PPGDataset(train_files, label='SBP')
 

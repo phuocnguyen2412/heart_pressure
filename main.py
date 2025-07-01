@@ -3,12 +3,13 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from scipy.signal import resample
 
-import cv2
 import numpy as np
 import tempfile
 import os
 
 from matplotlib import pyplot as plt
+
+from utils import extract_ppg_from_video
 
 app = FastAPI()
 
@@ -22,15 +23,15 @@ async def upload_ppg(file: UploadFile = File(...)):
         temp_path = temp_video.name
 
     # Xử lý video để trích xuất tín hiệu PPG
-    roi = (100, 100, 200, 200)
-    ppg_signal = extract_ppg_from_video(temp_path, roi=roi)
-    cap = cv2.VideoCapture(temp_path)
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    cap.release()
-    print("Extracted PPG Signal:", ppg_signal.shape)
-    ppg_signal_125hz = resample_ppg(ppg_signal, original_fps=fps, target_fps=125)
-    segments = split_segments(ppg_signal_125hz, segment_length=875)
-    print("Resampled PPG Signal:", segments.shape)
+
+    ppg_signal = extract_ppg_from_video(temp_path)
+    # cap = cv2.VideoCapture(temp_path)
+    # fps = cap.get(cv2.CAP_PROP_FPS)
+    # cap.release()
+    # print("Extracted PPG Signal:", ppg_signal.shape)
+    # ppg_signal_125hz = resample_ppg(ppg_signal, original_fps=fps, target_fps=125)
+    # segments = split_segments(ppg_signal_125hz, segment_length=875)
+    # print("Resampled PPG Signal:", segments.shape)
 
     # Tính toán huyết áp (giả lập)
     systolic, diastolic = estimate_blood_pressure(ppg_signal)
@@ -41,29 +42,6 @@ async def upload_ppg(file: UploadFile = File(...)):
     # Trả kết quả về FE
     return JSONResponse({"systolic": systolic, "diastolic": diastolic})
 
-def extract_ppg_from_video(video_path, roi=(100, 100, 200, 200), plot_ppg=True):
-    cap = cv2.VideoCapture(video_path)
-    ppg_signal = []
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-        x1, y1, x2, y2 = roi
-        roi_frame = frame[y1:y2, x1:x2, 1]
-        mean_val = np.mean(roi_frame)
-        ppg_signal.append(mean_val)
-    cap.release()
-    ppg_signal = np.array(ppg_signal)
-
-    if plot_ppg:
-        plt.figure(figsize=(10,4))
-        plt.plot(ppg_signal)
-        plt.title("Extracted PPG Signal")
-        plt.xlabel("Frame")
-        plt.ylabel("Mean ROI Value (Green Channel)")
-        plt.show()
-
-    return ppg_signal
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
