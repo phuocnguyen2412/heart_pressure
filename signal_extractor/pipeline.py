@@ -24,9 +24,11 @@ print("Allowed video formats", allowed_video_fmts)
 
 allowed_video_fmts.extend(list(map(lambda x: x.upper(), allowed_video_fmts)))
 
-if config.filename is not None:
-    video_name = "IMG_1157.MOV"
-    video_path = config.filename
+
+def run_extract_signal(file_path):
+    
+    video_name = os.path.basename(file_path)
+    video_path = file_path
     print("video_path:", video_path)
     output_folder = os.path.join(config.output_folder, video_name)
     os.makedirs(output_folder, exist_ok=True)

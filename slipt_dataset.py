@@ -2,10 +2,10 @@ import h5py
 import numpy as np
 from sklearn.model_selection import train_test_split
 import os
-
+from setting import BASE_DIR
 # ======================== CONFIG ========================
-INPUT_FILE = 'MIMIC-III_ppg_dataset.h5'
-OUT_DIR = 'ppg_split_files'       # Output folder for split .h5 files
+INPUT_FILE = os.path.join(BASE_DIR, 'ppg-dataset', 'MIMIC-III_ppg_dataset.h5')
+OUT_DIR = os.path.join(BASE_DIR, 'ppg_split_files')  # Output folder for split .h5 files
 BATCH_SIZE = 100_000             # Number of samples per output file
 SEED = 42                        # Random seed for reproducibility
 # ========================================================

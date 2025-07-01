@@ -2,7 +2,14 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.signal import resample
-
+from cnn_lstm import ConvNet
+import torch
+from setting import BASE_DIR
+import os
+model_path = os.path.join(BASE_DIR, 'trained_model', 'cnn-lstm', 'best_model.pth')
+model = ConvNet()
+checkpoint = torch.load(model_path)
+model.load_state_dict(checkpoint['model_state_dict'])
 def extract_ppg_from_video(video_path, plot_ppg=True):
     roi = (100, 100, 200, 200)
     cap = cv2.VideoCapture(video_path)
@@ -55,3 +62,11 @@ def extract_ppg_from_video(video_path, plot_ppg=True):
         plt.show()
 
     return ppg_resampled
+
+
+def predict_blood_pressure(ppg_signal):
+    output = model(torch.tensor(ppg_signal, dtype=torch.float32).unsqueeze(0))
+    output = output.item()
+    print("Predicted Blood Pressure:", output)
+    return output
+    
