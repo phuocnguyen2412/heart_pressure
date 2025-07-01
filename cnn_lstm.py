@@ -49,8 +49,8 @@ class ConvNet(nn.Module):
         out = self.fc2(out)           # (batch_size, output_dim)
         return out
 
-learning_rate = 0.001
-batch_size = 2048
+learning_rate = 0.0001
+batch_size = 1024
 if __name__ == '__main__':
     print("Using device:", DEVICE)
     train_dataset_sbp = PPGDataset(train_files, label='SBP')
@@ -74,6 +74,6 @@ if __name__ == '__main__':
     save_dir = os.path.join(BASE_DIR, "trained_model", "cnn-lstm")
     os.makedirs(save_dir, exist_ok=True)
     opt = Optimization(model, config=None, loss_fn=loss_fn, optimizer=optimizer, patience=10, delta=0.0, save_dir=save_dir)
-    opt.load_checkpoint(os.path.join(save_dir, "best_model.pth"))  # Load the best model if exists
+    opt.load_checkpoint(os.path.join(save_dir, "last_model.pth"))  # Load the best model if exists
     opt.train(train_loader=train_dataloader, val_loader=val_dataloader, epochs=100, resume=False, resume_path=None)
     opt.plot_losses()
