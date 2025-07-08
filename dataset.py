@@ -1,9 +1,13 @@
 import glob
+import os
 
 import h5py
 import torch
 
 from torch.utils.data import Dataset, DataLoader
+
+from setting import BASE_DIR
+
 
 class PPGDataset(Dataset):
     def __init__(self, h5_files, label):
@@ -36,6 +40,11 @@ class PPGDataset(Dataset):
         target = torch.tensor(target, dtype=torch.float32)
         return ppg, target
 
-train_files = sorted(glob.glob("ppg_split_files/train_part*.h5"))
-val_files = sorted(glob.glob("ppg_split_files/val_part*.h5"))
-test_files = sorted(glob.glob("ppg_split_files/test_part*.h5"))
+data_folder = os.path.join(BASE_DIR, 'ppg_split_files')
+print("Data folder:", data_folder)
+train_files = sorted(glob.glob(f"{data_folder}/train_part*.h5"))
+print("Number of training files:", len(train_files))
+val_files = sorted(glob.glob(f"{data_folder}/val_part*.h5"))
+print("Number of validation files:", len(val_files))
+test_files = sorted(glob.glob(f"{data_folder}/test_part*.h5"))
+print("Number of test files:", len(test_files))

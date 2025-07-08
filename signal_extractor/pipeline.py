@@ -26,7 +26,7 @@ allowed_video_fmts.extend(list(map(lambda x: x.upper(), allowed_video_fmts)))
 
 
 def run_extract_signal(file_path):
-    
+
     video_name = os.path.basename(file_path)
     video_path = file_path
     print("video_path:", video_path)
@@ -45,10 +45,13 @@ def run_extract_signal(file_path):
     )
     print("Signal preprocessing completed for", video_name)
 
-    run_beat_separation(video_name, output_folder)
-    print("Beat separation completed for", video_name)
-    #
-    # run_fiducial_points_detection(video_name, output_folder)
-    # print("Fiducial points detection completed for", video_name)
+    import pandas as pd
+    signal_file = os.path.join(str(output_folder), video_name + "_preprocessed.csv")
+    df = pd.read_csv(signal_file, index_col=False)
+
+    data = df["luma_mean>roll_avg>sub>lpf>cut_start"].values
+    print("Data shape:", data.shape)
+    return data.tolist()
+
 
 

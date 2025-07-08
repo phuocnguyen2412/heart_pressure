@@ -8,13 +8,14 @@ matplotlib.use("agg")
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.signal import butter
+from scipy.signal import butter, resample
 from scipy.signal import lfilter, filtfilt
 import scipy.fftpack
 import os
 import sys
 import yaml
-from setting import config
+from setting import config, target_samples
+
 
 class SignalPreprocessor():
 
@@ -138,15 +139,15 @@ class SignalPreprocessor():
         return y
 
 
-def visualize_signal(signals, labels, output_fname, title=""):
+def visualize_signal(signals, labels, output_fname, title="", source="r_ch_mean"):
     plt.figure()
     plt.title(title)
     l_tp = [
-        "luma_mean",
-        "luma_mean>cut_start",
-        "luma_mean>cut_start>hpf",
-        "luma_mean>cut_start>hpf>bpf_bpm",
-        "luma_mean>roll_avg>sub>lpf>cut_start"
+        f"{source}",
+        f"{source}>cut_start",
+        f"{source}>cut_start>hpf",
+        f"{source}>cut_start>hpf>bpf_bpm",
+        f"{source}>roll_avg>sub>lpf>cut_start"
     ]
     n_plots = len(l_tp)
     fig, ax = plt.subplots(nrows=n_plots, figsize=(6, int(n_plots*2)))
@@ -184,11 +185,9 @@ def process_single_signal_file(
     import numpy as np
     sp = SignalPreprocessor(125)
     filepath = os.path.join(output_folder, file_name + ".csv")
-    print(filepath)
 
-
-    csv_fpath = os.path.join(output_folder, file_name + ".csv")
-    img_fpath = os.path.join(output_folder, file_name + ".pdf")
+    csv_fpath = os.path.join(output_folder, file_name + "_preprocessed.csv")
+    img_fpath = os.path.join(output_folder, file_name + "_preprocessed.pdf")
     params = {
         'preprocessor': {'filter_chains': [{'flist': [{'name': 'roll_avg',
                                                        'params': {'window_size_seconds': 1.01}},
@@ -197,10 +196,10 @@ def process_single_signal_file(
                                                        'params': {'filter_order': 2,
                                                                   'low': 4}},
                                                       {'name': 'cut_start',
-                                                       'params': {'seconds': 3}}],
+                                                       'params': {'seconds': 0}}],
                                             'name': 'chain2'},
                                            {'flist': [{'name': 'cut_start',
-                                                       'params': {'seconds': 3}},
+                                                       'params': {'seconds': 0}},
                                                       {'name': 'hpf',
                                                        'params': {'cutoff': 0.5,
                                                                   'order': 1}},
@@ -233,6 +232,13 @@ def process_single_signal_file(
                         prev_x=signal_at_step_j[-2] if len(signal_at_step_j) > 1 else None,
                         **fun_dict["params"]
                     )
+                    print("Function %s applied to %s, resulting in shape %s" % (
+                        fun_dict["name"],
+                        name_at_step_j[-1],
+                        filtered_j.shape
+                    ))
+                    if len(filtered_j) != target_samples:
+                        filtered_j = resample(filtered_j, target_samples)
                     new_name = "%s>%s" % (name_at_step_j[-1], fun_dict["name"])
 
                     if len(filtered_j) == len(extracted_s[source].values):
@@ -256,7 +262,7 @@ def process_single_signal_file(
         visualize_signal(
             everything_to_plot,
             labels=everything_to_plot_labels,
-            output_fname=img_fpath, )
+            output_fname=img_fpath, source="luma_mean")
     except Exception as e:
         traceback.print_exc()
         print(e)

@@ -5,9 +5,9 @@ from pprint import pprint
 
 import cv2
 import matplotlib
-from scipy.signal import resample
+from scipy.signal import resample, find_peaks
 
-from setting import config
+from setting import config, segment_seconds, target_samples
 
 matplotlib.use("agg")
 import matplotlib.pyplot as plt
@@ -157,8 +157,7 @@ def visualize_signal(signals, labels, output_fname, title=""):
 
 # lets make this one parallel
 def extract_signal(filename, video_path, output_folder):
-    sample_rate = 125
-    segment_seconds = 7
+
 
     # Đọc video
     cap = cv2.VideoCapture(video_path)
@@ -168,7 +167,7 @@ def extract_signal(filename, video_path, output_folder):
     print(f"Video FPS: {fps}, Total frames: {total_frames}, Duration: {duration_seconds:.2f}s")
 
 
-    target_samples = sample_rate * segment_seconds
+
     # Tính vị trí đoạn 7s ở giữa video (theo frame)
     center_frame = total_frames // 2
     half_seg = int((segment_seconds * fps) / 2)

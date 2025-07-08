@@ -4,11 +4,11 @@ from matplotlib import pyplot as plt
 from scipy.signal import resample
 from cnn_lstm import ConvNet
 import torch
-from setting import BASE_DIR
+from setting import BASE_DIR, DEVICE
 import os
 model_path = os.path.join(BASE_DIR, 'trained_model', 'cnn-lstm', 'best_model.pth')
 model = ConvNet()
-checkpoint = torch.load(model_path)
+checkpoint = torch.load(model_path, map_location=DEVICE)
 model.load_state_dict(checkpoint['model_state_dict'])
 def extract_ppg_from_video(video_path, plot_ppg=True):
     roi = (100, 100, 200, 200)
