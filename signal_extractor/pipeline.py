@@ -49,7 +49,7 @@ def run_extract_signal(file_path):
     signal_file = os.path.join(str(output_folder), video_name + "_preprocessed.csv")
     df = pd.read_csv(signal_file, index_col=False)
 
-    data = df["luma_mean>roll_avg>sub>lpf>cut_start"].values
+    data = df["r_ch_mean>cut_start>hpf>bpf_bpm"].values
     print("Data shape:", data.shape)
     return data.tolist()
 

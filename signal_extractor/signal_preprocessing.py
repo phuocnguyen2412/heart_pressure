@@ -208,7 +208,7 @@ def process_single_signal_file(
                                                                   'multiplier': 3,
                                                                   'order': 1}}],
                                             'name': 'dynamic_bpm'}],
-                         'sources': ['luma_mean']}
+                         'sources': ['r_ch_mean']}
     }
 
     try:
@@ -237,8 +237,6 @@ def process_single_signal_file(
                         name_at_step_j[-1],
                         filtered_j.shape
                     ))
-                    if len(filtered_j) != target_samples:
-                        filtered_j = resample(filtered_j, target_samples)
                     new_name = "%s>%s" % (name_at_step_j[-1], fun_dict["name"])
 
                     if len(filtered_j) == len(extracted_s[source].values):
@@ -262,7 +260,7 @@ def process_single_signal_file(
         visualize_signal(
             everything_to_plot,
             labels=everything_to_plot_labels,
-            output_fname=img_fpath, source="luma_mean")
+            output_fname=img_fpath, source="r_ch_mean")
     except Exception as e:
         traceback.print_exc()
         print(e)

@@ -42,9 +42,9 @@ async def upload_ppg(file: UploadFile = File(...)):
         temp_path = temp_video.name
 
 
-    # Đảm bảo convert sang mp4 nếu không phải mp4
-    if not temp_path.endswith(".mp4"):
-        temp_path = convert_to_mp4(temp_path)
+    # # Đảm bảo convert sang mp4 nếu không phải mp4
+    # if not temp_path.endswith(".mp4"):
+    #     temp_path = convert_to_mp4(temp_path)
 
     ppg_signal = run_extract_signal(temp_path)
     output = predict_test_data(ppg_signal)

@@ -167,8 +167,6 @@ def extract_signal(filename, video_path, output_folder):
     print(f"Video FPS: {fps}, Total frames: {total_frames}, Duration: {duration_seconds:.2f}s")
 
 
-
-    # Tính vị trí đoạn 7s ở giữa video (theo frame)
     center_frame = total_frames // 2
     half_seg = int((segment_seconds * fps) / 2)
     start_frame = max(center_frame - half_seg, 0)
@@ -182,9 +180,15 @@ def extract_signal(filename, video_path, output_folder):
     cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
     for _ in range(num_frames_to_read):
         ret, frame = cap.read()
+        h, w, _ = frame.shape
+        x1, x2 = int(w * 0.25), int(w * 0.75)
+        y1, y2 = int(h * 0.25), int(h * 0.75)
+        roi = frame[y1:y2, x1:x2]
+
+        frame_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
         if not ret:
             break
-        list_of_frames.append(frame)
+        list_of_frames.append(frame_rgb)
     cap.release()
 
     se = SignalExtractor(int(fps))

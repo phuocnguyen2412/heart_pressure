@@ -1,108 +1,105 @@
-"""
-    Computes the outputs for test data
-"""
+import os
 import pickle
-
-from scipy.signal import find_peaks
-
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import find_peaks, medfilt
+from setting import BASE_DIR
 from evaluate import predicting_ABP_waveform
 from models import UNetDS64, MultiResUNet1D
-import os
-import numpy as np
-from setting import BASE_DIR
 
-def calculate_heart_rate(signal, fs=125):
-    """
-    Tính nhịp tim từ tín hiệu PPG hoặc ABP.
-    ---
-    signal: mảng tín hiệu, có thể là dạng 1D hoặc 2D cần flatten
-    fs: tần số lấy mẫu
-    """
-    signal = np.array(signal).flatten()  # đảm bảo là mảng 1D
-
-    peaks, _ = find_peaks(signal, distance=fs*0.4)
-
-    num_peaks = len(peaks)
-    duration_sec = len(signal) / fs
-
-    hr = (num_peaks / duration_sec) * 60
-    return hr
-
+# ================= Utility Functions ================= #
 def clip_signal(signal, min_val, max_val):
     return np.clip(signal, min_val, max_val)
 
 def remove_spikes(signal, threshold=3):
-    """
-    Loại bỏ điểm nhiễu đột ngột bằng phương pháp dựa trên z-score.
-    Các giá trị có z-score lớn hơn threshold sẽ được thay bởi giá trị trước đó.
-    """
     signal = np.array(signal).flatten()
-    mean = np.mean(signal)
-    std = np.std(signal)
+    mean, std = np.mean(signal), np.std(signal)
     z_scores = np.abs((signal - mean) / std)
     clean_signal = signal.copy()
     for i in range(len(signal)):
         if z_scores[i] > threshold:
-            # Thay thế bằng giá trị trước đó (hoặc giá trị trung bình)
-            clean_signal[i] = clean_signal[i-1] if i > 0 else mean
+            clean_signal[i] = clean_signal[i - 1] if i > 0 else mean
     return clean_signal
 
-from scipy.signal import medfilt
-
 def median_filter(signal, kernel_size=5):
-    """
-    Lọc nhiễu đột ngột bằng median filter.
-    """
     return medfilt(signal, kernel_size)
 
+def calculate_heart_rate(signal, fs=125):
+    signal = np.array(signal).flatten()
+    peaks, _ = find_peaks(signal, distance=0.4 * fs)
+    return (len(peaks) / (len(signal) / fs)) * 60
+
+def extract_sbp_dbp(abp_signal, distance=30):
+    abp_signal = np.array(abp_signal).flatten()
+    sbp_idx, _ = find_peaks(abp_signal, distance=distance)
+    dbp_idx, _ = find_peaks(-abp_signal, distance=distance)
+    return abp_signal[sbp_idx], abp_signal[dbp_idx], sbp_idx, dbp_idx
+
+from scipy.signal import butter, filtfilt
+
+def lowpass_filter(signal, fs, cutoff=5):
+    b, a = butter(4, cutoff / (0.5 * fs), btype='low')
+    return filtfilt(b, a, signal)
+
+def plot_abp_with_sbp_dbp(abp_signal, sbp_idx, dbp_idx):
+    abp_signal = np.array(abp_signal).flatten()
+    plt.plot(abp_signal, label="ABP")
+    plt.plot(sbp_idx, abp_signal[sbp_idx], 'ro', label="SBP")
+    plt.plot(dbp_idx, abp_signal[dbp_idx], 'go', label="DBP")
+    plt.legend()
+    plt.title("ABP waveform with SBP and DBP points")
+    plt.xlabel("Time (samples)")
+    plt.ylabel("Pressure (mmHg)")
+    plt.grid()
+    plt.savefig(os.path.join('abp_with_sbp_dbp.png'))
+    plt.show()
+
+# ================= Main Prediction Function ================= #
 def predict_test_data(x_test):
-    """
-        Computes the outputs for test data
-        and saves them in order to avoid recomputing
-    """
-    #preprocessing
-    dt = pickle.load(open(os.path.join(BASE_DIR, 'data', 'meta9.p'), 'rb'))			# loading metadata
-    max_ppg = dt['max_ppg']
-    min_ppg = dt['min_ppg']
-    max_abp = dt['max_abp']
-    min_abp = dt['min_abp']
-    print({
-        "max_ppg": max_ppg,
-        "min_ppg": min_ppg,
-        "max_abp": max_abp,
-        "min_abp": min_abp
-    })
-    # x_test = clip_signal(x_test, min_ppg, max_ppg)  # Lọc nhiễu đột ngột bằng median filter
-    ppg_norm = np.array(x_test)      # Thêm dòng này để chắc chắn x_test là array
+    # Load metadata
+    meta = pickle.load(open(os.path.join(BASE_DIR, 'data', 'meta9.p'), 'rb'))
+    min_ppg, max_ppg = meta['min_ppg'], meta['max_ppg']
+    min_abp, max_abp = meta['min_abp'], meta['max_abp']
 
-    ppg_norm = (ppg_norm - min_ppg) / (max_ppg - min_ppg)
-
-    length = 1024               # length of signal
-
+    # Normalize and reshape PPG input
+    x_test = np.array(x_test)
+    x_test = clip_signal(x_test, min_ppg, max_ppg)
+    ppg_norm = (x_test - min_ppg) / (max_ppg - min_ppg)
     ppg_norm = ppg_norm.reshape(1, 1024, 1)
-    print("Shape of x_test:", ppg_norm.shape)
-    mdl1 = UNetDS64(length)                                             # creating approximation network
-    mdl1.load_weights(os.path.join(BASE_DIR, 'models','ApproximateNetwork.h5'))   # loading weights
 
-    Y_test_pred_approximate = mdl1.predict(ppg_norm,verbose=1)        # predicting approximate abp waveform
+    # Predict approximate ABP waveform
+    mdl1 = UNetDS64(1024)
+    mdl1.load_weights(os.path.join(BASE_DIR, 'models', 'ApproximateNetwork.h5'))
+    approx_abp = mdl1.predict(ppg_norm, verbose=1)
 
-    mdl2 = MultiResUNet1D(length)                                       # creating refinement network
-    mdl2.load_weights(os.path.join(BASE_DIR, 'models','RefinementNetwork.h5'))    # loading weights
+    # Refine ABP waveform
+    mdl2 = MultiResUNet1D(1024)
+    mdl2.load_weights(os.path.join(BASE_DIR, 'models', 'RefinementNetwork.h5'))
+    refined_abp = mdl2.predict(approx_abp[0], verbose=1)
 
-    Y_test_pred = mdl2.predict(Y_test_pred_approximate[0],verbose=1)    # predicting abp waveform
-    print("Shape of Y_test_pred:", Y_test_pred.shape)
+    # Denormalize ABP prediction
+    abp_pred = refined_abp * (max_abp - min_abp) + min_abp
+    abp_pred = lowpass_filter(abp_pred.flatten(), fs=125, cutoff=5)
 
-    abp_pred = Y_test_pred * (max_abp - min_abp) + min_abp
+    # Save prediction
     predicting_ABP_waveform(x_test, abp_pred)
-    #Khôi phục hồi lại giá trị huyết áp từ giá trị dự đoán
 
-    SBP = np.max(abp_pred)  # Huyết áp tâm thu (mmHg)
-    DBP = np.min(abp_pred)  # Huyết áp tâm trương (mmHg)
-    MAP = np.mean(abp_pred)  # Huyết áp trung bình (mmHg)
-    HR = (calculate_heart_rate(x_test) * 3 + calculate_heart_rate(abp_pred))/4
-    return {
-        "hr": HR,
-        "systolic": SBP,
-        "diastolic": DBP,
-        "mean": MAP
-    }
+    # Estimate heart rate (weighted avg of PPG & ABP HR)
+    hr =  calculate_heart_rate(abp_pred)
+    # Tính distance tương ứng
+    beat_interval_sec = 60.0 / hr
+    distance = int(beat_interval_sec * 125 )  # Lấy 80% để tránh bỏ đỉnh gần
+    distance = max(20, distance)  # đảm bảo không quá nhỏ
+
+    # Extract SBP, DBP
+    sbp_vals, dbp_vals, sbp_idx, dbp_idx = extract_sbp_dbp(abp_pred, distance=distance)
+    sbp, dbp = np.median(sbp_vals), np.median(dbp_vals)
+
+    map_val = (2 * dbp + sbp) / 3
+
+    # Plot ABP with annotations
+    plot_abp_with_sbp_dbp(abp_pred, sbp_idx, dbp_idx)
+
+    result = {"hr": hr, "systolic": sbp, "diastolic": dbp, "mean": map_val}
+    print(result)
+    return result
