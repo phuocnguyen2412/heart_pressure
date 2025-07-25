@@ -1,7 +1,7 @@
 import os
 import shutil
 from multiprocessing import cpu_count
-from pprint import pprint
+from pprint import pformat
 
 import yaml
 
@@ -16,7 +16,7 @@ if config.force_redo:
     os.makedirs(config.output_folder, exist_ok=True)
 
 params = yaml.load(open(config.params, "r"), Loader=yaml.FullLoader)
-print("Parameters loaded from", pprint(params))
+# print("Parameters loaded from", pformat(params))
 
 
 allowed_video_fmts = ["mov", "mp4"]

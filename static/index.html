@@ -36,13 +36,8 @@
         filesToUpload = Array.from(fileInput.files);
         uploadBtn.disabled = filesToUpload.length === 0;
     };
-
-    uploadBtn.onclick = async () => {
-        if (filesToUpload.length === 0) return;
-        uploadBtn.disabled = true;
-
-        for (const file of filesToUpload) {
-            const formData = new FormData();
+    const handleUpload = async (file) => {
+        const formData = new FormData();
             formData.append('file', file, file.name);
 
             const loadingDiv = document.createElement('div');
@@ -75,6 +70,14 @@
                 loadingDiv.textContent = `Lỗi khi xử lý file ${file.name}`;
                 console.error(err);
             }
+    }
+
+    uploadBtn.onclick = async () => {
+        if (filesToUpload.length === 0) return;
+        uploadBtn.disabled = true;
+
+        for (const file of filesToUpload) {
+            handleUpload(file);
         }
 
         uploadBtn.disabled = false;

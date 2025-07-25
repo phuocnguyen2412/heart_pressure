@@ -7,6 +7,18 @@ from setting import BASE_DIR
 from evaluate import predicting_ABP_waveform
 from models import UNetDS64, MultiResUNet1D
 
+# Load metadata
+meta = pickle.load(open(os.path.join(BASE_DIR, 'data', 'meta9.p'), 'rb'))
+min_ppg, max_ppg = meta['min_ppg'], meta['max_ppg']
+min_abp, max_abp = meta['min_abp'], meta['max_abp']
+
+# Refine ABP waveform
+mdl2 = MultiResUNet1D(1024)
+mdl2.load_weights(os.path.join(BASE_DIR, 'models', 'RefinementNetwork.h5'))
+
+ # Predict approximate ABP waveform
+mdl1 = UNetDS64(1024)
+mdl1.load_weights(os.path.join(BASE_DIR, 'models', 'ApproximateNetwork.h5'))
 # ================= Utility Functions ================= #
 def clip_signal(signal, min_val, max_val):
     return np.clip(signal, min_val, max_val)
@@ -56,25 +68,14 @@ def plot_abp_with_sbp_dbp(abp_signal, sbp_idx, dbp_idx):
 
 # ================= Main Prediction Function ================= #
 def predict_test_data(x_test):
-    # Load metadata
-    meta = pickle.load(open(os.path.join(BASE_DIR, 'data', 'meta9.p'), 'rb'))
-    min_ppg, max_ppg = meta['min_ppg'], meta['max_ppg']
-    min_abp, max_abp = meta['min_abp'], meta['max_abp']
-
     # Normalize and reshape PPG input
     x_test = np.array(x_test)
     x_test = clip_signal(x_test, min_ppg, max_ppg)
     ppg_norm = (x_test - min_ppg) / (max_ppg - min_ppg)
     ppg_norm = ppg_norm.reshape(1, 1024, 1)
 
-    # Predict approximate ABP waveform
-    mdl1 = UNetDS64(1024)
-    mdl1.load_weights(os.path.join(BASE_DIR, 'models', 'ApproximateNetwork.h5'))
+   
     approx_abp = mdl1.predict(ppg_norm, verbose=1)
-
-    # Refine ABP waveform
-    mdl2 = MultiResUNet1D(1024)
-    mdl2.load_weights(os.path.join(BASE_DIR, 'models', 'RefinementNetwork.h5'))
     refined_abp = mdl2.predict(approx_abp[0], verbose=1)
 
     # Denormalize ABP prediction
@@ -86,9 +87,11 @@ def predict_test_data(x_test):
 
     # Estimate heart rate (weighted avg of PPG & ABP HR)
     hr =  calculate_heart_rate(abp_pred)
-    # Tính distance tương ứng
-    beat_interval_sec = 60.0 / hr
-    distance = int(beat_interval_sec * 125 )  # Lấy 80% để tránh bỏ đỉnh gần
+    # # Tính distance tương ứng
+    # beat_interval_sec = 60.0 / hr
+    # distance = int(beat_interval_sec * 125 )  # Lấy 80% để tránh bỏ đỉnh gần
+    distance = 125
+    print(f"Estimated heart rate: {hr:.2f} bpm, distance: {distance} samples")
     distance = max(20, distance)  # đảm bảo không quá nhỏ
 
     # Extract SBP, DBP

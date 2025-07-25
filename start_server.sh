@@ -1,1 +1,1 @@
-uvicorn main:app --reload --host 0.0.0.0 --port 4000
+nohup gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8081 --workers 4 --threads 2 > server.log 2>&1 &

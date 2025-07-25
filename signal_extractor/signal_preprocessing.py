@@ -51,6 +51,11 @@ class SignalPreprocessor():
         freq_x = np.linspace(0.0, 1.0 / (2.0 * T), N // 2)
 
         max_cutoff = freq_x[np.argmax(signal_fft)] * multiplier
+        # Thêm điều kiện kiểm tra và sửa lỗi
+        if max_cutoff <= 0:
+            # Sử dụng giá trị mặc định nếu max_cutoff không hợp lệ
+            max_cutoff = max(mincut, 0.001)  # Sử dụng mincut nếu được cung cấp, nếu không thì dùng 0.001
+            print(f"Warning: Calculated cutoff frequency was <= 0, using {max_cutoff} instead")
         y = self.butter_highpass_filter(no_nan_signal, max_cutoff, order)
         y = np.concatenate((np.full(n_nan, np.nan), y), axis=0)
 
@@ -232,11 +237,6 @@ def process_single_signal_file(
                         prev_x=signal_at_step_j[-2] if len(signal_at_step_j) > 1 else None,
                         **fun_dict["params"]
                     )
-                    print("Function %s applied to %s, resulting in shape %s" % (
-                        fun_dict["name"],
-                        name_at_step_j[-1],
-                        filtered_j.shape
-                    ))
                     new_name = "%s>%s" % (name_at_step_j[-1], fun_dict["name"])
 
                     if len(filtered_j) == len(extracted_s[source].values):
