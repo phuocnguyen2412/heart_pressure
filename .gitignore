@@ -214,3 +214,6 @@ ppg_split_files
 MIMIC-III_ppg_dataset.h5
 data
 *.h5
+
+*.png
+
