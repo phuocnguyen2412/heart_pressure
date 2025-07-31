@@ -61,10 +61,10 @@ def plot_abp_with_sbp_dbp(abp_signal, sbp_idx, dbp_idx):
     plt.legend()
     plt.title("ABP waveform with SBP and DBP points")
     plt.xlabel("Time (samples)")
-    plt.ylabel("Pressure (mmHg)")
+    plt.ylabel("Pressure (mmHg)")    
     plt.grid()
     plt.savefig(os.path.join('abp_with_sbp_dbp.png'))
-    plt.show()
+    # plt.show()  # Commented out for server environment
 
 # ================= Main Prediction Function ================= #
 def predict_test_data(x_test):
