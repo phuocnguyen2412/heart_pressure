@@ -1,8 +1,0 @@
-video_id,video_name,video_path,app_sys,app_dia,app_mean,app_hr,processing_time,status,ground_truth_sys,ground_truth_dia
-1,video_1,D:\Heart\heart_pressure\data\calibration_videos\video_1.mov,132.7521966854795,73.29810139261346,93.11613315690215,95.21484375,7.557336807250977,success,142,106
-2,video_2,D:\Heart\heart_pressure\data\calibration_videos\video_2.mov,124.97286280817173,76.62577288754542,92.74146952775419,95.21484375,5.887392997741699,success,122,86
-3,video_3,D:\Heart\heart_pressure\data\calibration_videos\video_3.mov,108.80819642237803,57.37532550523906,74.51961581095206,95.21484375,3.959705352783203,success,136,75
-5,video_5,D:\Heart\heart_pressure\data\calibration_videos\video_5.mov,121.64147941046353,67.38412406847618,85.46990918247197,102.5390625,4.029549837112427,success,129,79
-6,video_6,D:\Heart\heart_pressure\data\calibration_videos\video_6.mp4,102.9364395991241,65.31364428145567,77.85457605401182,87.890625,7.271729946136475,success,118,83
-7,video_7,D:\Heart\heart_pressure\data\calibration_videos\video_7.mov,130.44269435375907,69.55228120512454,89.84908558800271,87.890625,2.6006531715393066,success,120,61
-8,video_8,D:\Heart\heart_pressure\data\calibration_videos\video_8.mp4,122.5887792804954,87.05927183985483,98.90244098673502,102.5390625,1.8581907749176025,success,127,72
