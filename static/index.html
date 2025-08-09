@@ -43,8 +43,9 @@
             const loadingDiv = document.createElement('div');
             loadingDiv.className = "result-item loading";
             loadingDiv.textContent = `Đang xử lý: ${file.name}...`;
-            result.appendChild(loadingDiv);            try {
-                const response = await fetch('http://127.0.0.1:8081/upload_ppg', {
+            result.appendChild(loadingDiv);            
+            try {
+                const response = await fetch('http://171.244.46.201:8081/upload_ppg', {
                     method: 'POST',
                     body: formData
                 });
