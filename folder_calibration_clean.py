@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import sys
 from linear_calibration import LinearCalibrator
+from main_pipeline import BloodPressureInferencePipeline
 from setting import BASE_DIR
 
 # Add signal_extractor to path
@@ -81,13 +82,8 @@ class FolderCalibrationSystem:
             print(f"🔄 Processing {actual_video_file}...")
             
             try:
-                # Extract PPG signal first
-                print(f"   📊 Extracting PPG signal from {actual_video_file}...")
-                ppg_signal = run_extract_signal(video_path)
-                
-                # Run prediction pipeline
-                print(f"   🔄 Running BP prediction...")
-                result = predict_test_data(ppg_signal)
+                bp_inference_pipeline = BloodPressureInferencePipeline()
+                result = bp_inference_pipeline.predict_test_data(video_path)
                 
                 if result and 'systolic' in result and 'diastolic' in result:
                     # Extract predictions

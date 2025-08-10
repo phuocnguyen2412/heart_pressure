@@ -157,8 +157,6 @@ def visualize_signal(signals, labels, output_fname, title=""):
 
 # lets make this one parallel
 def extract_signal(filename, video_path, output_folder):
-
-
     # Đọc video
     cap = cv2.VideoCapture(video_path)
     fps = cap.get(cv2.CAP_PROP_FPS)

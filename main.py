@@ -7,10 +7,7 @@ import os
 
 from pydantic import BaseModel
 
-from predict_test import predict_test_data
-from signal_extractor.pipeline import run_extract_signal
-
-import subprocess
+from main_pipeline import BloodPressureInferencePipeline
 import os
 
 # def convert_to_mp4(input_path):
@@ -42,6 +39,14 @@ class BloodPressureResult(BaseModel):
     mean: float
     hr: float
 
+
+
+@app.on_event("startup")
+async def startup_event():  
+    global bp_inference_pipeline
+    bp_inference_pipeline = BloodPressureInferencePipeline()
+    print("BP Inference Pipeline initialized")
+
 @app.post("/upload_ppg", response_model=BloodPressureResult)
 async def upload_ppg(file: UploadFile = File(...)):
     import time
@@ -59,8 +64,7 @@ async def upload_ppg(file: UploadFile = File(...)):
 
     print(f"Processing video file: {temp_path}")
         
-    ppg_signal = run_extract_signal(temp_path)
-    output = predict_test_data(ppg_signal)
+    output = bp_inference_pipeline.predict_test_data(temp_path)
 
     # Xóa file tạm
     os.remove(temp_path)

@@ -1,0 +1,2012 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "scipy.stats",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.lines",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.lines",
+        "description": "matplotlib.lines",
+        "detail": "matplotlib.lines",
+        "documentation": {}
+    },
+    {
+        "label": "make_axes_locatable",
+        "importPath": "mpl_toolkits.axes_grid1",
+        "description": "mpl_toolkits.axes_grid1",
+        "isExtraImport": true,
+        "detail": "mpl_toolkits.axes_grid1",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_absolute_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "r2_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_absolute_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "segment_seconds",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "target_samples",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "target_samples",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "segment_seconds",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "target_samples",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "pyplot",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "pyplot",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "isExtraImport": true,
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_beat",
+        "importPath": "hb_utils",
+        "description": "hb_utils",
+        "isExtraImport": true,
+        "detail": "hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_beat",
+        "importPath": "hb_utils",
+        "description": "hb_utils",
+        "isExtraImport": true,
+        "detail": "hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "LabelEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "cpu_count",
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "isExtraImport": true,
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "run_beat_separation",
+        "importPath": "signal_extractor.signal_beat_separation",
+        "description": "signal_extractor.signal_beat_separation",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_beat_separation",
+        "documentation": {}
+    },
+    {
+        "label": "extract_signal",
+        "importPath": "signal_extractor.signal_extract",
+        "description": "signal_extractor.signal_extract",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_extract",
+        "documentation": {}
+    },
+    {
+        "label": "SignalExtractor",
+        "importPath": "signal_extractor.signal_extract",
+        "description": "signal_extractor.signal_extract",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_extract",
+        "documentation": {}
+    },
+    {
+        "label": "run_fiducial_points_detection",
+        "importPath": "signal_extractor.signal_fiducial_points_detection",
+        "description": "signal_extractor.signal_fiducial_points_detection",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_fiducial_points_detection",
+        "documentation": {}
+    },
+    {
+        "label": "process_single_signal_file",
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "SignalPreprocessor",
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "SignalPreprocessor",
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_signal",
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "isExtraImport": true,
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "argrelmax",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "argrelmin",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "resample",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "find_peaks",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "argrelmin",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "argrelmax",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "butter",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "resample",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "lfilter",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "filtfilt",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "resample",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "find_peaks",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "medfilt",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "butter",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "filtfilt",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "resample",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "dtw",
+        "importPath": "tslearn.metrics",
+        "description": "tslearn.metrics",
+        "isExtraImport": true,
+        "detail": "tslearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "FastICA",
+        "importPath": "sklearn.decomposition",
+        "description": "sklearn.decomposition",
+        "isExtraImport": true,
+        "detail": "sklearn.decomposition",
+        "documentation": {}
+    },
+    {
+        "label": "PCA",
+        "importPath": "sklearn.decomposition",
+        "description": "sklearn.decomposition",
+        "isExtraImport": true,
+        "detail": "sklearn.decomposition",
+        "documentation": {}
+    },
+    {
+        "label": "Parallel",
+        "importPath": "joblib",
+        "description": "joblib",
+        "isExtraImport": true,
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "delayed",
+        "importPath": "joblib",
+        "description": "joblib",
+        "isExtraImport": true,
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "cpu_count",
+        "importPath": "joblib",
+        "description": "joblib",
+        "isExtraImport": true,
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.patches",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.patches",
+        "description": "matplotlib.patches",
+        "detail": "matplotlib.patches",
+        "documentation": {}
+    },
+    {
+        "label": "signal_extractor.hb_utils",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "scipy.fftpack",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scipy.fftpack",
+        "description": "scipy.fftpack",
+        "detail": "scipy.fftpack",
+        "documentation": {}
+    },
+    {
+        "label": "os.path",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.path",
+        "description": "os.path",
+        "detail": "os.path",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "PPGDataset",
+        "importPath": "dataset",
+        "description": "dataset",
+        "isExtraImport": true,
+        "detail": "dataset",
+        "documentation": {}
+    },
+    {
+        "label": "train_files",
+        "importPath": "dataset",
+        "description": "dataset",
+        "isExtraImport": true,
+        "detail": "dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Optimization",
+        "importPath": "optimization",
+        "description": "optimization",
+        "isExtraImport": true,
+        "detail": "optimization",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "h5py",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "h5py",
+        "description": "h5py",
+        "detail": "h5py",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "predict_test_data",
+        "importPath": "predict_test",
+        "description": "predict_test",
+        "isExtraImport": true,
+        "detail": "predict_test",
+        "documentation": {}
+    },
+    {
+        "label": "predict_test_data",
+        "importPath": "predict_test",
+        "description": "predict_test",
+        "isExtraImport": true,
+        "detail": "predict_test",
+        "documentation": {}
+    },
+    {
+        "label": "LinearCalibrator",
+        "importPath": "linear_calibration",
+        "description": "linear_calibration",
+        "isExtraImport": true,
+        "detail": "linear_calibration",
+        "documentation": {}
+    },
+    {
+        "label": "LinearCalibrator",
+        "importPath": "linear_calibration",
+        "description": "linear_calibration",
+        "isExtraImport": true,
+        "detail": "linear_calibration",
+        "documentation": {}
+    },
+    {
+        "label": "BloodPressureInferencePipeline",
+        "importPath": "main_pipeline",
+        "description": "main_pipeline",
+        "isExtraImport": true,
+        "detail": "main_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "BloodPressureInferencePipeline",
+        "importPath": "main_pipeline",
+        "description": "main_pipeline",
+        "isExtraImport": true,
+        "detail": "main_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "BloodPressureInferencePipeline",
+        "importPath": "main_pipeline",
+        "description": "main_pipeline",
+        "isExtraImport": true,
+        "detail": "main_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "SummaryWriter",
+        "importPath": "torch.utils.tensorboard",
+        "description": "torch.utils.tensorboard",
+        "isExtraImport": true,
+        "detail": "torch.utils.tensorboard",
+        "documentation": {}
+    },
+    {
+        "label": "mlflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mlflow",
+        "description": "mlflow",
+        "detail": "mlflow",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "run_extract_signal",
+        "importPath": "signal_extractor.pipeline",
+        "description": "signal_extractor.pipeline",
+        "isExtraImport": true,
+        "detail": "signal_extractor.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "StaticFiles",
+        "importPath": "fastapi.staticfiles",
+        "description": "fastapi.staticfiles",
+        "isExtraImport": true,
+        "detail": "fastapi.staticfiles",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "MultiResUNet1D",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetDS64",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Processor",
+        "importPath": "processor",
+        "description": "processor",
+        "isExtraImport": true,
+        "detail": "processor",
+        "documentation": {}
+    },
+    {
+        "label": "BPExtractor",
+        "importPath": "bp_extractor",
+        "description": "bp_extractor",
+        "isExtraImport": true,
+        "detail": "bp_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_abp_waveform",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Activation",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "BatchNormalization",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Conv1D",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Input",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "MaxPooling1D",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "UpSampling1D",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "concatenate",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "importPath": "keras.models",
+        "description": "keras.models",
+        "isExtraImport": true,
+        "detail": "keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_BHS_Standard",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def evaluate_BHS_Standard():\n    \"\"\"\n        Evaluates PPG2ABP based on\n        BHS Standard Metric\n    \"\"\"\n    def newline(p1, p2):\n        \"\"\"\n        Draws a line between two points\n        Arguments:\n            p1 {list} -- coordinate of the first point",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_AAMI_Standard",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def evaluate_AAMI_Standard():\n    \"\"\"\n        Evaluate PPG2ABP using AAMI Standard metric\n    \"\"\"\n    def calcErrorAAMI(Ypred, Ytrue, max_abp, min_abp, max_ppg, min_ppg):\n        \"\"\"\n        Calculates error of sbp,dbp,map for AAMI standard computation\n        Arguments:\n            Ytrue {array} -- ground truth\n            Ypred {array} -- predicted",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_BP_Classification",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def evaluate_BP_Classification():\n    \"\"\"\n        Evaluates PPG2ABP for BP Classification\n    \"\"\"\n    dt = pickle.load(open(os.path.join('data', 'test.p'), 'rb'))\t\t# loading test data\n    Ytrue = dt['Y_test']\n    dt = pickle.load(open(os.path.join('data', 'meta9.p'), 'rb'))\t\t# loading meta data\n    max_ppg = dt['max_ppg']\n    min_ppg = dt['min_ppg']\n    max_abp = dt['max_abp']",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "bland_altman_plot",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def bland_altman_plot():\n    \"\"\"\n        Draws the Bland Altman plot\n    \"\"\"\n    def bland_altman(data1, data2):\n        \"\"\"\n        Computes mean +- 1.96 sd\n        Arguments:\n            data1 {array} -- series 1\n            data2 {array} -- series 2",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "regression_plot",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def regression_plot():\n    \"\"\"\n        Draws the Regression Plots\n    \"\"\"\n    dt = pickle.load(open(os.path.join('data','test.p'),'rb'))\t\t# loading the test data\n    Ytrue = dt['Y_test']\n    dt = pickle.load(open(os.path.join('data','meta9.p'),'rb'))\t\t# loading the meta data\n    max_ppg = dt['max_ppg']\n    min_ppg = dt['min_ppg']\n    max_abp = dt['max_abp']",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "models.evaluate",
+        "description": "models.evaluate",
+        "peekOfCode": "def main():\n    predicting_ABP_waveform()\t\t# draws the predicted waveforms\n    evaluate_BHS_Standard()\t\t\t# evaluates under BHS standard\n    evaluate_AAMI_Standard()\t\t# evaluates under AAMI standard\n    evaluate_BP_Classification()\t# evaluates BP classification accuracy\n    bland_altman_plot()\t\t\t\t# draws the bland altman plots\n    regression_plot()\t\t\t\t# draws the regression plots",
+        "detail": "models.evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "BeatSpreader",
+        "kind": 6,
+        "importPath": "signal_extractor.fta_average_beat",
+        "description": "signal_extractor.fta_average_beat",
+        "peekOfCode": "class BeatSpreader():\n    def __init__(self, dimension):\n        self.dim = dimension\n        return\n    def spread(self, beats, beat_det_names, interp_dim):\n        beat_set = []\n        for beat_det_name in beat_det_names:\n            for beat_counter in beats[beat_det_name].keys():\n                signal = np.array(beats[beat_det_name][beat_counter])\n                # s_min = signal.min()",
+        "detail": "signal_extractor.fta_average_beat",
+        "documentation": {}
+    },
+    {
+        "label": "delete_all_subdirs",
+        "kind": 2,
+        "importPath": "signal_extractor.fta_average_beat",
+        "description": "signal_extractor.fta_average_beat",
+        "peekOfCode": "def delete_all_subdirs(base_dir):\n    for subdir in os.listdir(base_dir):\n        subd_fpath = os.path.join(base_dir, subdir)\n        if os.path.isdir(subd_fpath):\n            shutil.rmtree(subd_fpath, ignore_errors=True)\ndef visualize_signal(signals, labels, output_fname, title=\"\"):\n    plt.figure()\n    plt.title(title)\n    for i, signal in enumerate(signals):\n        # for visualization normalize signal",
+        "detail": "signal_extractor.fta_average_beat",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_signal",
+        "kind": 2,
+        "importPath": "signal_extractor.fta_average_beat",
+        "description": "signal_extractor.fta_average_beat",
+        "peekOfCode": "def visualize_signal(signals, labels, output_fname, title=\"\"):\n    plt.figure()\n    plt.title(title)\n    for i, signal in enumerate(signals):\n        # for visualization normalize signal\n        to_plot = (signal - signal.mean()) / signal.std()\n        plt.plot(range(signal.shape[0]), to_plot, label=labels[i])\n    plt.grid(linestyle='dashed', )\n    plt.legend(loc=\"lower right\")\n    print(output_fname)",
+        "detail": "signal_extractor.fta_average_beat",
+        "documentation": {}
+    },
+    {
+        "label": "run_average_beat_extraction",
+        "kind": 2,
+        "importPath": "signal_extractor.fta_average_beat",
+        "description": "signal_extractor.fta_average_beat",
+        "peekOfCode": "def run_average_beat_extraction(output_folder, args):\n    beat_spreader = BeatSpreader(dimension=1000)\n    peaks_folders = [\n        (\"/home/data/beats/\", \"NOFTA\")\n    ]\n    i_dim = 480\n    os.makedirs(args.output_folder, exist_ok=True)\n    for peak_setting in peaks_folders:\n        pf, setting = peak_setting\n        if args.force_redo:",
+        "detail": "signal_extractor.fta_average_beat",
+        "documentation": {}
+    },
+    {
+        "label": "derivative",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def derivative(signal, index=1):\n    d1 = np.array([0] + [b - a for a, b in zip(signal, signal[1:])])\n    if index == 1:\n        return d1\n    elif index == 2:\n        return np.array([0] + [b - a for a, b in zip(d1, d1[1:])])\n    else:\n        raise ValueError(\"Only support first or second derivatives\")\ndef rows_less_than_n(df, label_column=\"folder_name\", n=60):\n    retdf = df.copy()",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "rows_less_than_n",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def rows_less_than_n(df, label_column=\"folder_name\", n=60):\n    retdf = df.copy()\n    y_l = df[label_column]\n    le = LabelEncoder()\n    y = le.fit_transform(y_l)\n    bc = np.bincount(y)\n    for i, item in enumerate(bc):\n        if bc[i]<n:\n            # print(\"Removing class %s with %d samples\" % (le.classes_[i], bc[i]))\n            retdf = retdf.drop(retdf[retdf.folder_name.values == le.classes_[i]].index)",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "merge_features_into_file",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def merge_features_into_file(directory, postfix):\n    \"\"\"\n    Take all feature files and merge them together\n    :param directory:\n    :param out_fname:\n    :return:\n    \"\"\"\n    feat_subf = os.listdir(directory)\n    feat_subf = list(filter(lambda x: os.path.isdir(os.path.join(directory, x)), feat_subf))\n    users = os.listdir(os.path.join(directory, feat_subf[0]))",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_fmt_files",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def get_all_fmt_files(folder, fmt=\"csv\"):\n    files = os.listdir(folder)\n    files = list(filter(lambda x: os.path.isfile(os.path.join(folder, x)), files))\n    # only retain allowed formats\n    files = list(filter(lambda x: x.split(\".\")[-1] == fmt, files))\n    return files\ndef merge_csv_horizontal(fpaths, outfilepath):\n    big_df = pd.read_csv(fpaths[0], index_col=None)\n    for fpath in fpaths[1:]:\n        big_df = big_df.join(pd.read_csv(fpath, index_col=None), lsuffix=\"\", rsuffix=\"-removeme\")",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "merge_csv_horizontal",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def merge_csv_horizontal(fpaths, outfilepath):\n    big_df = pd.read_csv(fpaths[0], index_col=None)\n    for fpath in fpaths[1:]:\n        big_df = big_df.join(pd.read_csv(fpath, index_col=None), lsuffix=\"\", rsuffix=\"-removeme\")\n    col_names = set(big_df.columns.values)\n    for col in col_names:\n        if \"-removeme\" in col:\n            big_df = big_df.drop(col, axis=1)\n    big_df.to_csv(outfilepath, index=False)\n    return True",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "merge_all_csv_into_one",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def merge_all_csv_into_one(directory, keep_folder_name=True, keep_filename=True, postfix=\"\"):\n    output = []\n    parent_dir = os.sep.join(directory.split(os.sep)[:-1])\n    files_to_merge = get_all_fmt_files(directory, fmt=\"csv\")\n    for f in files_to_merge:\n        filepath = os.path.join(directory, f)\n        folder_name = directory.split(os.sep)[-1]\n        fname = f.split(\".\")[0]\n        df = pd.read_csv(filepath, index_col=False)\n        columns = df.columns.values.tolist()",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "delete_all_subdirs",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def delete_all_subdirs(base_dir):\n    for subdir in os.listdir(base_dir):\n        subd_fpath = os.path.join(base_dir, subdir)\n        if os.path.isdir(subd_fpath):\n            shutil.rmtree(subd_fpath, ignore_errors=True)\ndef interpolate_beat(signal, dim):\n    x = np.arange(signal.shape[0])\n    f = interpolate.interp1d(x, signal)\n    x_new = np.arange(0, dim)\n    ls = np.linspace(0, signal.shape[0] - 1, dim)",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_beat",
+        "kind": 2,
+        "importPath": "signal_extractor.hb_utils",
+        "description": "signal_extractor.hb_utils",
+        "peekOfCode": "def interpolate_beat(signal, dim):\n    x = np.arange(signal.shape[0])\n    f = interpolate.interp1d(x, signal)\n    x_new = np.arange(0, dim)\n    ls = np.linspace(0, signal.shape[0] - 1, dim)\n    y_new = f(ls)\n    return x_new, y_new",
+        "detail": "signal_extractor.hb_utils",
+        "documentation": {}
+    },
+    {
+        "label": "params",
+        "kind": 5,
+        "importPath": "signal_extractor.params",
+        "description": "signal_extractor.params",
+        "peekOfCode": "params = {\n    \"extractors\": [\n        {\n            \"functions\": [\"luma_component_mean\"],\n            \"name\": \"luma_mean\",\n            \"parameters\": {\"initial_skip_seconds\": 0},\n        },\n        {\n            \"functions\": [\"red_channel_mean\"],\n            \"name\": \"r_ch_mean\",",
+        "detail": "signal_extractor.params",
+        "documentation": {}
+    },
+    {
+        "label": "run_extract_signal",
+        "kind": 2,
+        "importPath": "signal_extractor.pipeline",
+        "description": "signal_extractor.pipeline",
+        "peekOfCode": "def run_extract_signal(file_path):\n    video_name = os.path.basename(file_path)\n    video_path = file_path\n    print(\"video_path:\", video_path)\n    output_folder = os.path.join(config.output_folder, video_name)\n    os.makedirs(output_folder, exist_ok=True)\n    extract_signal(\n        video_name, video_path, output_folder\n    )\n    print(\"Signal extraction completed for\", video_name)",
+        "detail": "signal_extractor.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "params",
+        "kind": 5,
+        "importPath": "signal_extractor.pipeline",
+        "description": "signal_extractor.pipeline",
+        "peekOfCode": "params = yaml.load(open(config.params, \"r\"), Loader=yaml.FullLoader)\n# print(\"Parameters loaded from\", pformat(params))\nallowed_video_fmts = [\"mov\", \"mp4\"]\nprint(\"Allowed video formats\", allowed_video_fmts)\nallowed_video_fmts.extend(list(map(lambda x: x.upper(), allowed_video_fmts)))\ndef run_extract_signal(file_path):\n    video_name = os.path.basename(file_path)\n    video_path = file_path\n    print(\"video_path:\", video_path)\n    output_folder = os.path.join(config.output_folder, video_name)",
+        "detail": "signal_extractor.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "allowed_video_fmts",
+        "kind": 5,
+        "importPath": "signal_extractor.pipeline",
+        "description": "signal_extractor.pipeline",
+        "peekOfCode": "allowed_video_fmts = [\"mov\", \"mp4\"]\nprint(\"Allowed video formats\", allowed_video_fmts)\nallowed_video_fmts.extend(list(map(lambda x: x.upper(), allowed_video_fmts)))\ndef run_extract_signal(file_path):\n    video_name = os.path.basename(file_path)\n    video_path = file_path\n    print(\"video_path:\", video_path)\n    output_folder = os.path.join(config.output_folder, video_name)\n    os.makedirs(output_folder, exist_ok=True)\n    extract_signal(",
+        "detail": "signal_extractor.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "SignalBeatQuality",
+        "kind": 6,
+        "importPath": "signal_extractor.signal_beat_fta",
+        "description": "signal_extractor.signal_beat_fta",
+        "peekOfCode": "class SignalBeatQuality():\n    def __init__(self, sample_rate):\n        self.sample_rate = sample_rate\n    def dwt_filter_with_reference(self, beats_dict, ref, threshold, interp_dim):\n        good_beats = []\n        mask = {}\n        dwt_dist = {}\n        keys = list(sorted(beats_dict.keys()))\n        for k in keys:\n            b = beats_dict[k]",
+        "detail": "signal_extractor.signal_beat_fta",
+        "documentation": {}
+    },
+    {
+        "label": "plot_things1",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_beat_fta",
+        "description": "signal_extractor.signal_beat_fta",
+        "peekOfCode": "def plot_things1(lines, scatters, filename):\n    fig, ax = plt.subplots(nrows=len(lines), figsize=(12, 12))\n    for i in range(len(lines)):\n        # ith subplot\n        lines_tp = lines[i]\n        for j, _ in enumerate(lines_tp):\n            # jth line\n            x, y, label, color = lines_tp[j]\n            ax[i].plot(x, y, label=label, c=color)\n    for i in range(len(scatters)):",
+        "detail": "signal_extractor.signal_beat_fta",
+        "documentation": {}
+    },
+    {
+        "label": "plot_things",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_beat_fta",
+        "description": "signal_extractor.signal_beat_fta",
+        "peekOfCode": "def plot_things(beats_original, beats_ftaed, reference, headers, distances, masks, filename):\n    x_counter = 0\n    plt.figure(figsize=(30, 5))\n    _, i_ref = interpolate_beat(reference, 30)\n    text_gap = 0.05\n    for i, h in enumerate(headers):\n        plt.text(-200-len(i_ref), -(i+1)*text_gap, h)\n    keys_org = list(sorted(map(int, beats_original.keys())))\n    keys_fta = list(sorted(map(int, beats_ftaed.keys())))\n    for i, key in enumerate(keys_org):",
+        "detail": "signal_extractor.signal_beat_fta",
+        "documentation": {}
+    },
+    {
+        "label": "run_beat_fta",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_beat_fta",
+        "description": "signal_extractor.signal_beat_fta",
+        "peekOfCode": "def run_beat_fta(filename, output_folder, sample_rate = 30):\n    bq = SignalBeatQuality(sample_rate=sample_rate)\n    reference = pd.read_csv(\"/home/data/beat_visuals/NOFTA.csv\", index_col=False).values[..., :-1].mean(axis=0)\n    interpolate_dim = reference.shape[0]\n    threshold_dwt = 2.0\n    threshold_ends = 0.25\n    min_bpm = 30\n    max_beat_length = bq.sample_rate / (min_bpm / 60)  # should be 90 for bpm of 40\n    fname = filename.split(\".\")[0]\n    img_fpath = os.path.join(output_folder, fname + \".png\")",
+        "detail": "signal_extractor.signal_beat_fta",
+        "documentation": {}
+    },
+    {
+        "label": "SignalBeatSeparator",
+        "kind": 6,
+        "importPath": "signal_extractor.signal_beat_separation",
+        "description": "signal_extractor.signal_beat_separation",
+        "peekOfCode": "class SignalBeatSeparator():\n    def __init__(self, sample_rate):\n        self.sample_rate = sample_rate\n    def moving_average_flat(self, x, window_size=10, **kwargs):\n        assert window_size % 2 == 1, \"Odd number for window size in moving average pls\"\n        conv = np.convolve(x, np.ones(window_size), 'valid') / window_size\n        return np.pad(conv, [((window_size - 1) // 2, (window_size - 1) // 2)], mode='constant', constant_values=0)\n    def match_minimums_in_signal(self, target_signal, target_signal_idxs, filtered_signal_idxs, min_f_gap):\n        \"\"\"\n        For every minimum in filtered_signal_idxs attempts to match a minimum of target signal (contained in target_signal_idxs).",
+        "detail": "signal_extractor.signal_beat_separation",
+        "documentation": {}
+    },
+    {
+        "label": "plot_things",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_beat_separation",
+        "description": "signal_extractor.signal_beat_separation",
+        "peekOfCode": "def plot_things(lines, scatters, filename):\n    fig, ax = plt.subplots(nrows=len(lines), figsize=(12, 12))\n    for i in range(len(lines)):\n        # ith subplot\n        lines_tp = lines[i]\n        for j, _ in enumerate(lines_tp):\n            # jth line\n            x, y, label, color = lines_tp[j]\n            ax[i].plot(x, y, label=label, c=color)\n    for i in range(len(scatters)):",
+        "detail": "signal_extractor.signal_beat_separation",
+        "documentation": {}
+    },
+    {
+        "label": "run_beat_separation",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_beat_separation",
+        "description": "signal_extractor.signal_beat_separation",
+        "peekOfCode": "def run_beat_separation(filename, output_folder):\n    bd = SignalBeatSeparator(30)\n    filepath = os.path.join(output_folder, filename + \".csv\")\n    img_fpath = os.path.join(output_folder, filename + \".pdf\")\n    json_fpath = os.path.join(output_folder, filename + \".json\")\n    params = {'beat_separation': [{'name': 'hb_argrelmin',\n                                   'params': {'max_bpm': 101,\n                                              'order': 2,\n                                              'processed_column_name': 'luma_mean>roll_avg>sub>lpf>cut_start',\n                                              'smooth_window_size': 13}}]",
+        "detail": "signal_extractor.signal_beat_separation",
+        "documentation": {}
+    },
+    {
+        "label": "SignalExtractor",
+        "kind": 6,
+        "importPath": "signal_extractor.signal_extract",
+        "description": "signal_extractor.signal_extract",
+        "peekOfCode": "class SignalExtractor():\n    def __init__(self, sample_rate, initial_skip_seconds=0):\n        self.sample_rate = sample_rate\n        self.initial_skip_seconds = initial_skip_seconds\n    def red_channel_mean(self, frames, **kwargs):\n        signal = []\n        for frame_bgr in frames:\n            mean_of_r_ch = frame_bgr[..., 2].mean()\n            signal.append(mean_of_r_ch)\n        signal = np.array(signal)",
+        "detail": "signal_extractor.signal_extract",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_signal",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_extract",
+        "description": "signal_extractor.signal_extract",
+        "peekOfCode": "def visualize_signal(signals, labels, output_fname, title=\"\"):\n    fig, ax = plt.subplots(nrows=len(signals), figsize=(16, 4*len(signals)))\n    for i, signal in enumerate(signals):\n        # for visualization normalize signal\n        to_plot = (signal-signal.mean())/ signal.std()\n        ax[i].plot(range(signal.shape[0]), to_plot, label=labels[i])\n        ax[i].legend()\n        ax[i].grid(linestyle='dashed',)\n    plt.savefig(output_fname, bbox_inches=\"tight\")\n    plt.close(fig)",
+        "detail": "signal_extractor.signal_extract",
+        "documentation": {}
+    },
+    {
+        "label": "extract_signal",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_extract",
+        "description": "signal_extractor.signal_extract",
+        "peekOfCode": "def extract_signal(filename, video_path, output_folder):\n    # Đọc video\n    cap = cv2.VideoCapture(video_path)\n    fps = cap.get(cv2.CAP_PROP_FPS)\n    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))\n    duration_seconds = total_frames / fps\n    print(f\"Video FPS: {fps}, Total frames: {total_frames}, Duration: {duration_seconds:.2f}s\")\n    center_frame = total_frames // 2\n    half_seg = int((segment_seconds * fps) / 2)\n    start_frame = max(center_frame - half_seg, 0)",
+        "detail": "signal_extractor.signal_extract",
+        "documentation": {}
+    },
+    {
+        "label": "SignalFiducialPointsDetector",
+        "kind": 6,
+        "importPath": "signal_extractor.signal_fiducial_points_detection",
+        "description": "signal_extractor.signal_fiducial_points_detection",
+        "peekOfCode": "class SignalFiducialPointsDetector():\n    def __init__(self, sample_rate):\n        self.sample_rate = sample_rate\n    def moving_average(self, x, n):\n        return np.convolve(x, np.ones(n), 'same') / n\n    def first_minmax_if_exists(self, x, kind):\n        if kind == \"min\":\n            mins = argrelmin(x)[0]\n            if len(mins)>0:\n                return mins[0]",
+        "detail": "signal_extractor.signal_fiducial_points_detection",
+        "documentation": {}
+    },
+    {
+        "label": "plot_things",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_fiducial_points_detection",
+        "description": "signal_extractor.signal_fiducial_points_detection",
+        "peekOfCode": "def plot_things(result, filename):\n    dict_keys = list(result.keys())\n    fig, ax = plt.subplots(nrows=3, figsize=(20, 4*3))\n    offset_on_x = 0\n    label1, label2, label3, label_sys, label_dynotch, label_dysys = \"beat\", \"1st\", \"2nd\", \"systolic_peak\", \"dychrotic_notch\", \"diastolic_peak\"\n    label_p1, label_p5 = \"max_gradient\", \"min_gradient\"\n    max_1 = 0.000000001\n    max_2 = 0.000000001\n    for i in range(len(dict_keys)):\n        _b = np.array(result[i][\"_b\"])",
+        "detail": "signal_extractor.signal_fiducial_points_detection",
+        "documentation": {}
+    },
+    {
+        "label": "run_fiducial_points_detection",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_fiducial_points_detection",
+        "description": "signal_extractor.signal_fiducial_points_detection",
+        "peekOfCode": "def run_fiducial_points_detection(file_name, output_folder):\n    fpd = SignalFiducialPointsDetector(30)\n    img_out_fpath = os.path.join(output_folder, file_name + \".pdf\")\n    json_out_fpath = os.path.join(output_folder, file_name + \".json\")\n    extracted_beats = json.load(open(json_out_fpath, \"r\"))\n    keys = sorted(map(int, extracted_beats[\"hb_argrelmin\"].keys()))\n    list_of_beats = [extracted_beats[\"hb_argrelmin\"][str(k)] for k in keys]\n    r = fpd.hb_fp_detection_20191217(list_of_beats)\n    json.dump(r, open(json_out_fpath, \"w\"))\n    plot_things(r, filename=img_out_fpath)",
+        "detail": "signal_extractor.signal_fiducial_points_detection",
+        "documentation": {}
+    },
+    {
+        "label": "SignalPreprocessor",
+        "kind": 6,
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "peekOfCode": "class SignalPreprocessor():\n    def __init__(self, sample_rate):\n        self.sample_rate = sample_rate\n        self.shorter_names = {\n            \"hpf\": \"butter_highpass_filter\",\n            \"lpf\": \"butter_lowpass_filter\",\n            \"maf\": \"moving_average_flat\",\n            \"diff_pad\": \"minus_with_pad\",\n            \"fft\": \"fft\",\n            \"roll_avg\": \"rolling_average\",",
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_signal",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "peekOfCode": "def visualize_signal(signals, labels, output_fname, title=\"\", source=\"r_ch_mean\"):\n    plt.figure()\n    plt.title(title)\n    l_tp = [\n        f\"{source}\",\n        f\"{source}>cut_start\",\n        f\"{source}>cut_start>hpf\",\n        f\"{source}>cut_start>hpf>bpf_bpm\",\n        f\"{source}>roll_avg>sub>lpf>cut_start\"\n    ]",
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "process_single_signal_file",
+        "kind": 2,
+        "importPath": "signal_extractor.signal_preprocessing",
+        "description": "signal_extractor.signal_preprocessing",
+        "peekOfCode": "def process_single_signal_file(\n        file_name, output_folder\n):\n    \"\"\"\n    Xử lý 1 file tín hiệu (CSV), xuất CSV kết quả và PDF hình ảnh.\n    \"\"\"\n    import os\n    import sys\n    import pandas as pd\n    import numpy as np",
+        "detail": "signal_extractor.signal_preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "ConvNet",
+        "kind": 6,
+        "importPath": "train_models.cnn_lstm",
+        "description": "train_models.cnn_lstm",
+        "peekOfCode": "class ConvNet(nn.Module):\n    def __init__(self):\n        super(ConvNet, self).__init__()\n        # Sequential block of layer1\n        self.layer1 = nn.Sequential(\n            nn.Conv1d(1, 128, kernel_size=9, stride=1, padding=0),\n            nn.BatchNorm1d(128),\n            nn.ReLU(),\n            nn.MaxPool1d(kernel_size=3, stride=3))\n        self.layer2 = nn.Sequential(",
+        "detail": "train_models.cnn_lstm",
+        "documentation": {}
+    },
+    {
+        "label": "learning_rate",
+        "kind": 5,
+        "importPath": "train_models.cnn_lstm",
+        "description": "train_models.cnn_lstm",
+        "peekOfCode": "learning_rate = 0.0001\nbatch_size = 1024\nif __name__ == '__main__':\n    print(\"Using device:\", DEVICE)\n    train_dataset_sbp = PPGDataset(train_files, label='SBP')\n    print(\"Shape of PPG data:\", train_dataset_sbp[0][0].shape)\n    print(\"Shape of SBP label:\", train_dataset_sbp[0][1].shape)\n    val_dataset_sbp = PPGDataset(train_files, label='SBP')\n    train_dataloader = DataLoader(train_dataset_sbp, batch_size=batch_size, shuffle=True, num_workers=8)\n    val_dataloader = DataLoader(val_dataset_sbp, batch_size=batch_size, shuffle=False, num_workers=8)",
+        "detail": "train_models.cnn_lstm",
+        "documentation": {}
+    },
+    {
+        "label": "batch_size",
+        "kind": 5,
+        "importPath": "train_models.cnn_lstm",
+        "description": "train_models.cnn_lstm",
+        "peekOfCode": "batch_size = 1024\nif __name__ == '__main__':\n    print(\"Using device:\", DEVICE)\n    train_dataset_sbp = PPGDataset(train_files, label='SBP')\n    print(\"Shape of PPG data:\", train_dataset_sbp[0][0].shape)\n    print(\"Shape of SBP label:\", train_dataset_sbp[0][1].shape)\n    val_dataset_sbp = PPGDataset(train_files, label='SBP')\n    train_dataloader = DataLoader(train_dataset_sbp, batch_size=batch_size, shuffle=True, num_workers=8)\n    val_dataloader = DataLoader(val_dataset_sbp, batch_size=batch_size, shuffle=False, num_workers=8)\n    print(\"Shape of PPG data in train dataloader:\", next(iter(train_dataloader))[0].shape)",
+        "detail": "train_models.cnn_lstm",
+        "documentation": {}
+    },
+    {
+        "label": "PPGDataset",
+        "kind": 6,
+        "importPath": "train_models.dataset",
+        "description": "train_models.dataset",
+        "peekOfCode": "class PPGDataset(Dataset):\n    def __init__(self, h5_files, label):\n        \"\"\"\n        Khởi tạo dataset từ các file HDF5 chứa dữ liệu PPG và nhãn huyết áp.\n        :param h5_files: Danh sách các file HDF5 chứa dữ liệu PPG.\n        :param label: Loại nhãn cần lấy ('SBP' hoặc 'DBP').\n        :type label: str\n        :raises ValueError: Nếu label không phải là 'SBP' hoặc 'DBP'.\n        :raises FileNotFoundError: Nếu không tìm thấy file HDF5 nào.\n        \"\"\"",
+        "detail": "train_models.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "data_folder",
+        "kind": 5,
+        "importPath": "train_models.dataset",
+        "description": "train_models.dataset",
+        "peekOfCode": "data_folder = os.path.join(BASE_DIR, 'ppg_split_files')\nprint(\"Data folder:\", data_folder)\ntrain_files = sorted(glob.glob(f\"{data_folder}/train_part*.h5\"))\nprint(\"Number of training files:\", len(train_files))\nval_files = sorted(glob.glob(f\"{data_folder}/val_part*.h5\"))\nprint(\"Number of validation files:\", len(val_files))\ntest_files = sorted(glob.glob(f\"{data_folder}/test_part*.h5\"))\nprint(\"Number of test files:\", len(test_files))",
+        "detail": "train_models.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "train_files",
+        "kind": 5,
+        "importPath": "train_models.dataset",
+        "description": "train_models.dataset",
+        "peekOfCode": "train_files = sorted(glob.glob(f\"{data_folder}/train_part*.h5\"))\nprint(\"Number of training files:\", len(train_files))\nval_files = sorted(glob.glob(f\"{data_folder}/val_part*.h5\"))\nprint(\"Number of validation files:\", len(val_files))\ntest_files = sorted(glob.glob(f\"{data_folder}/test_part*.h5\"))\nprint(\"Number of test files:\", len(test_files))",
+        "detail": "train_models.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "val_files",
+        "kind": 5,
+        "importPath": "train_models.dataset",
+        "description": "train_models.dataset",
+        "peekOfCode": "val_files = sorted(glob.glob(f\"{data_folder}/val_part*.h5\"))\nprint(\"Number of validation files:\", len(val_files))\ntest_files = sorted(glob.glob(f\"{data_folder}/test_part*.h5\"))\nprint(\"Number of test files:\", len(test_files))",
+        "detail": "train_models.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "test_files",
+        "kind": 5,
+        "importPath": "train_models.dataset",
+        "description": "train_models.dataset",
+        "peekOfCode": "test_files = sorted(glob.glob(f\"{data_folder}/test_part*.h5\"))\nprint(\"Number of test files:\", len(test_files))",
+        "detail": "train_models.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "sample_idx",
+        "kind": 5,
+        "importPath": "train_models.dataset_processing",
+        "description": "train_models.dataset_processing",
+        "peekOfCode": "sample_idx = 0\nsample_ppg = ppg[sample_idx]\nsample_bp = label[sample_idx]\nsubject = subject_idx[sample_idx][0]\nplt.plot(sample_ppg)\nplt.title(f'PPG Sample - Subject {subject} | SBP: {sample_bp[0]}, DBP: {sample_bp[1]}')\nplt.xlabel('Time')\nplt.ylabel('PPG Value')\nplt.show()",
+        "detail": "train_models.dataset_processing",
+        "documentation": {}
+    },
+    {
+        "label": "sample_ppg",
+        "kind": 5,
+        "importPath": "train_models.dataset_processing",
+        "description": "train_models.dataset_processing",
+        "peekOfCode": "sample_ppg = ppg[sample_idx]\nsample_bp = label[sample_idx]\nsubject = subject_idx[sample_idx][0]\nplt.plot(sample_ppg)\nplt.title(f'PPG Sample - Subject {subject} | SBP: {sample_bp[0]}, DBP: {sample_bp[1]}')\nplt.xlabel('Time')\nplt.ylabel('PPG Value')\nplt.show()",
+        "detail": "train_models.dataset_processing",
+        "documentation": {}
+    },
+    {
+        "label": "sample_bp",
+        "kind": 5,
+        "importPath": "train_models.dataset_processing",
+        "description": "train_models.dataset_processing",
+        "peekOfCode": "sample_bp = label[sample_idx]\nsubject = subject_idx[sample_idx][0]\nplt.plot(sample_ppg)\nplt.title(f'PPG Sample - Subject {subject} | SBP: {sample_bp[0]}, DBP: {sample_bp[1]}')\nplt.xlabel('Time')\nplt.ylabel('PPG Value')\nplt.show()",
+        "detail": "train_models.dataset_processing",
+        "documentation": {}
+    },
+    {
+        "label": "subject",
+        "kind": 5,
+        "importPath": "train_models.dataset_processing",
+        "description": "train_models.dataset_processing",
+        "peekOfCode": "subject = subject_idx[sample_idx][0]\nplt.plot(sample_ppg)\nplt.title(f'PPG Sample - Subject {subject} | SBP: {sample_bp[0]}, DBP: {sample_bp[1]}')\nplt.xlabel('Time')\nplt.ylabel('PPG Value')\nplt.show()",
+        "detail": "train_models.dataset_processing",
+        "documentation": {}
+    },
+    {
+        "label": "Optimization",
+        "kind": 6,
+        "importPath": "train_models.optimization",
+        "description": "train_models.optimization",
+        "peekOfCode": "class Optimization:\n    def __init__(self, model, config, loss_fn, optimizer, scheduler=None, patience=10, delta=0.0, save_dir='./'):\n        self.model = model.to(DEVICE)\n        self.loss_fn = loss_fn\n        self.optimizer = optimizer\n        self.scheduler = scheduler\n        self.train_losses = []\n        self.val_losses = []\n        self.patience = patience\n        self.delta = delta",
+        "detail": "train_models.optimization",
+        "documentation": {}
+    },
+    {
+        "label": "make_dir",
+        "kind": 2,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "def make_dir(path):\n    if not os.path.exists(path):\n        os.makedirs(path)\ndef get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)\n    return np.where(mask)[0]\ndef save_batches(ppg, label, subject_idx, indices, split_name, out_dir, batch_size):\n    num_samples = len(indices)\n    num_batches = int(np.ceil(num_samples / batch_size))\n    for b in range(num_batches):",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "get_indices_for_subjects",
+        "kind": 2,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "def get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)\n    return np.where(mask)[0]\ndef save_batches(ppg, label, subject_idx, indices, split_name, out_dir, batch_size):\n    num_samples = len(indices)\n    num_batches = int(np.ceil(num_samples / batch_size))\n    for b in range(num_batches):\n        start = b * batch_size\n        end = min((b + 1) * batch_size, num_samples)\n        batch_idx = indices[start:end]",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "save_batches",
+        "kind": 2,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "def save_batches(ppg, label, subject_idx, indices, split_name, out_dir, batch_size):\n    num_samples = len(indices)\n    num_batches = int(np.ceil(num_samples / batch_size))\n    for b in range(num_batches):\n        start = b * batch_size\n        end = min((b + 1) * batch_size, num_samples)\n        batch_idx = indices[start:end]\n        with h5py.File(\n                os.path.join(out_dir, f\"{split_name}_part{b+1}.h5\"), \"w\"\n        ) as f:",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "def main():\n    # Create output directory\n    make_dir(OUT_DIR)\n    # Đọc dữ liệu chỉ lấy chỉ số subject_idx vào RAM\n    with h5py.File(INPUT_FILE, \"r\") as f:\n        subject_idx = f['subject_idx'][:]\n    # Lấy danh sách subject duy nhất và chia tập\n    unique_subjects = np.unique(subject_idx)\n    train_subj, temp_subj = train_test_split(\n        unique_subjects, test_size=0.30, random_state=SEED",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "INPUT_FILE",
+        "kind": 5,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "INPUT_FILE = os.path.join(BASE_DIR, 'ppg-dataset', 'MIMIC-III_ppg_dataset.h5')\nOUT_DIR = os.path.join(BASE_DIR, 'ppg_split_files')  # Output folder for split .h5 files\nBATCH_SIZE = 100_000             # Number of samples per output file\nSEED = 42                        # Random seed for reproducibility\n# ========================================================\ndef make_dir(path):\n    if not os.path.exists(path):\n        os.makedirs(path)\ndef get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "OUT_DIR",
+        "kind": 5,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "OUT_DIR = os.path.join(BASE_DIR, 'ppg_split_files')  # Output folder for split .h5 files\nBATCH_SIZE = 100_000             # Number of samples per output file\nSEED = 42                        # Random seed for reproducibility\n# ========================================================\ndef make_dir(path):\n    if not os.path.exists(path):\n        os.makedirs(path)\ndef get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)\n    return np.where(mask)[0]",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "kind": 5,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "BATCH_SIZE = 100_000             # Number of samples per output file\nSEED = 42                        # Random seed for reproducibility\n# ========================================================\ndef make_dir(path):\n    if not os.path.exists(path):\n        os.makedirs(path)\ndef get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)\n    return np.where(mask)[0]\ndef save_batches(ppg, label, subject_idx, indices, split_name, out_dir, batch_size):",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "SEED",
+        "kind": 5,
+        "importPath": "train_models.slipt_dataset",
+        "description": "train_models.slipt_dataset",
+        "peekOfCode": "SEED = 42                        # Random seed for reproducibility\n# ========================================================\ndef make_dir(path):\n    if not os.path.exists(path):\n        os.makedirs(path)\ndef get_indices_for_subjects(subj_idx_arr, subject_list):\n    mask = np.isin(subj_idx_arr.flatten(), subject_list)\n    return np.where(mask)[0]\ndef save_batches(ppg, label, subject_idx, indices, split_name, out_dir, batch_size):\n    num_samples = len(indices)",
+        "detail": "train_models.slipt_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "BPExtractor",
+        "kind": 6,
+        "importPath": "bp_extractor",
+        "description": "bp_extractor",
+        "peekOfCode": "class BPExtractor():\n    def __init__(self, extract_config=None):\n        \"\"\"\n        Initialize the BPExtractor class.\n        \"\"\"\n        self.extract_config = extract_config or config\n        self.fps = None\n    def read_video(self, video_path):\n        \"\"\"\n        Read the video and return the list of frames.",
+        "detail": "bp_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "CalibratedPredictor",
+        "kind": 6,
+        "importPath": "calibrated_predictor",
+        "description": "calibrated_predictor",
+        "peekOfCode": "class CalibratedPredictor:\n    \"\"\"\n    Wrapper class để sử dụng model với linear calibration\n    \"\"\"\n    def __init__(self, calibration_path=None):\n        self.calibrator = LinearCalibrator()\n        self.calibration_loaded = False\n        # Try to load calibration\n        if self.load_calibration(calibration_path):\n            print(\"✅ Calibrated predictor ready!\")",
+        "detail": "calibrated_predictor",
+        "documentation": {}
+    },
+    {
+        "label": "predict_with_calibration",
+        "kind": 2,
+        "importPath": "calibrated_predictor",
+        "description": "calibrated_predictor",
+        "peekOfCode": "def predict_with_calibration(ppg_signal):\n    \"\"\"\n    Simple function to get calibrated prediction\n    \"\"\"\n    predictor = CalibratedPredictor()\n    return predictor.predict(ppg_signal)\ndef predict_without_calibration(ppg_signal):\n    \"\"\"\n    Simple function to get uncalibrated prediction\n    \"\"\"",
+        "detail": "calibrated_predictor",
+        "documentation": {}
+    },
+    {
+        "label": "predict_without_calibration",
+        "kind": 2,
+        "importPath": "calibrated_predictor",
+        "description": "calibrated_predictor",
+        "peekOfCode": "def predict_without_calibration(ppg_signal):\n    \"\"\"\n    Simple function to get uncalibrated prediction\n    \"\"\"\n    predictor = CalibratedPredictor()\n    return predictor.predict(ppg_signal, apply_calibration=False)\n# Quick test function\ndef test_calibrated_predictor():\n    \"\"\"Test the calibrated predictor\"\"\"\n    print(\"🧪 Testing Calibrated Predictor...\")",
+        "detail": "calibrated_predictor",
+        "documentation": {}
+    },
+    {
+        "label": "test_calibrated_predictor",
+        "kind": 2,
+        "importPath": "calibrated_predictor",
+        "description": "calibrated_predictor",
+        "peekOfCode": "def test_calibrated_predictor():\n    \"\"\"Test the calibrated predictor\"\"\"\n    print(\"🧪 Testing Calibrated Predictor...\")\n    # This would need actual PPG signal data to work\n    # For now, just test the class initialization\n    predictor = CalibratedPredictor()\n    print(f\"   Calibration loaded: {predictor.calibration_loaded}\")\n    if predictor.calibration_loaded:\n        print(\"   ✅ Predictor ready for calibrated predictions\")\n    else:",
+        "detail": "calibrated_predictor",
+        "documentation": {}
+    },
+    {
+        "label": "CalibrationDataLoader",
+        "kind": 6,
+        "importPath": "calibration_data_loader",
+        "description": "calibration_data_loader",
+        "peekOfCode": "class CalibrationDataLoader:\n    def __init__(self, csv_path=None):\n        if csv_path is None:\n            csv_path = os.path.join(BASE_DIR, 'data', 'calibration_data.csv')\n        self.csv_path = csv_path\n    def load_calibration_data(self):\n        \"\"\"Load calibration data from CSV\"\"\"\n        try:\n            df = pd.read_csv(self.csv_path)\n            print(f\"✅ Loaded calibration data: {len(df)} records\")",
+        "detail": "calibration_data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_last_step",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def load_last_step(path: str) -> int:\n    try:\n        with open(path, \"r\") as f:\n            return int(f.read().strip())\n    except Exception:\n        return -1  # lần đầu -> sẽ thành 0 sau khi +1\ndef save_last_step(path: str, step: int) -> None:\n    os.makedirs(os.path.dirname(path), exist_ok=True)\n    with open(path, \"w\") as f:\n        f.write(str(step))",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "save_last_step",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def save_last_step(path: str, step: int) -> None:\n    os.makedirs(os.path.dirname(path), exist_ok=True)\n    with open(path, \"w\") as f:\n        f.write(str(step))\ndef compute_metrics(predict_data, ground_truth):\n    mae = mean_absolute_error(ground_truth, predict_data)\n    mse = mean_squared_error(ground_truth, predict_data)\n    rmse = np.sqrt(mse)\n    r2 = r2_score(ground_truth, predict_data)\n    result = {\"mae\": mae, \"mse\": mse, \"rmse\": rmse, \"r2\": r2}",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "compute_metrics",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def compute_metrics(predict_data, ground_truth):\n    mae = mean_absolute_error(ground_truth, predict_data)\n    mse = mean_squared_error(ground_truth, predict_data)\n    rmse = np.sqrt(mse)\n    r2 = r2_score(ground_truth, predict_data)\n    result = {\"mae\": mae, \"mse\": mse, \"rmse\": rmse, \"r2\": r2}\n    return result\ndef evaluate_dataset(folder_path, csv_path, writer, dataset_name, step=0):\n    df = pd.read_csv(csv_path)\n    diastolic_preds = []",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_dataset",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def evaluate_dataset(folder_path, csv_path, writer, dataset_name, step=0):\n    df = pd.read_csv(csv_path)\n    diastolic_preds = []\n    systolic_preds = []\n    for _, row in df.iterrows():\n        video_path = os.path.join(folder_path, row[\"video\"])\n        print(video_path)\n        predict_data = bp_inference_pipeline.predict_test_data(video_path)\n        diastolic_preds.append(predict_data[\"diastolic\"])\n        systolic_preds.append(predict_data[\"systolic\"])",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "STEP_FILE",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "STEP_FILE = os.path.join(BASE_DIR, \"runs\", \"bp_eval\", \"last_step.txt\")\ndef load_last_step(path: str) -> int:\n    try:\n        with open(path, \"r\") as f:\n            return int(f.read().strip())\n    except Exception:\n        return -1  # lần đầu -> sẽ thành 0 sau khi +1\ndef save_last_step(path: str, step: int) -> None:\n    os.makedirs(os.path.dirname(path), exist_ok=True)\n    with open(path, \"w\") as f:",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "FolderCalibrationSystem",
+        "kind": 6,
+        "importPath": "folder_calibration_clean",
+        "description": "folder_calibration_clean",
+        "peekOfCode": "class FolderCalibrationSystem:\n    \"\"\"\n    Hệ thống calibration dựa trên folder structure:\n    - data/val/: Training data (videos + ground_truth.csv)\n    - data/test/: Testing data (videos + ground_truth.csv)\n    \"\"\"\n    def __init__(self):\n        self.calibrator = LinearCalibrator()\n        # Paths\n        self.val_folder = os.path.join(BASE_DIR, 'data', 'val')",
+        "detail": "folder_calibration_clean",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "folder_calibration_clean",
+        "description": "folder_calibration_clean",
+        "peekOfCode": "def main():\n    \"\"\"\n    Main function để chạy folder-based calibration pipeline\n    \"\"\"\n    print(\"🚀 Starting Folder-Based Linear Calibration System...\")\n    print(\"📁 Structure: data/val/ (training) → data/test/ (testing)\")\n    # Initialize system\n    calibration_system = FolderCalibrationSystem()\n    # Run complete pipeline\n    val_results, test_results, evaluation = calibration_system.run_complete_pipeline()",
+        "detail": "folder_calibration_clean",
+        "documentation": {}
+    },
+    {
+        "label": "signal_extractor_path",
+        "kind": 5,
+        "importPath": "folder_calibration_clean",
+        "description": "folder_calibration_clean",
+        "peekOfCode": "signal_extractor_path = os.path.join(BASE_DIR, 'signal_extractor')\nif signal_extractor_path not in sys.path:\n    sys.path.append(signal_extractor_path)\nfrom signal_extractor.pipeline import run_extract_signal\nfrom predict_test import predict_test_data\nclass FolderCalibrationSystem:\n    \"\"\"\n    Hệ thống calibration dựa trên folder structure:\n    - data/val/: Training data (videos + ground_truth.csv)\n    - data/test/: Testing data (videos + ground_truth.csv)",
+        "detail": "folder_calibration_clean",
+        "documentation": {}
+    },
+    {
+        "label": "LinearCalibrator",
+        "kind": 6,
+        "importPath": "linear_calibration",
+        "description": "linear_calibration",
+        "peekOfCode": "class LinearCalibrator:\n    \"\"\"\n    Linear Calibration cho Blood Pressure Prediction\n    Formula: Calibrated_Value = a * Raw_Value + b\n    \"\"\"\n    def __init__(self):\n        self.sys_model = None  # Model cho systolic\n        self.dia_model = None  # Model cho diastolic\n        self.is_fitted = False\n        self.calibration_params = {}",
+        "detail": "linear_calibration",
+        "documentation": {}
+    },
+    {
+        "label": "BloodPressureResult",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class BloodPressureResult(BaseModel):\n    systolic: float\n    diastolic: float\n    mean: float\n    hr: float\n@app.on_event(\"startup\")\nasync def startup_event():  \n    global bp_inference_pipeline\n    bp_inference_pipeline = BloodPressureInferencePipeline()\n    print(\"BP Inference Pipeline initialized\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n# Add CORS middleware\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # In production, replace with specific origins\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nclass BloodPressureResult(BaseModel):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "BloodPressureInferencePipeline",
+        "kind": 6,
+        "importPath": "main_pipeline",
+        "description": "main_pipeline",
+        "peekOfCode": "class BloodPressureInferencePipeline:\n    def __init__(self, extract_config=None):\n        self.extract_config = extract_config or config\n        # Load metadata\n        self.meta = pickle.load(open(os.path.join(BASE_DIR, \"data\", \"meta9.p\"), \"rb\"))\n        # Refine ABP waveform\n        self.mdl2 = MultiResUNet1D(1024)\n        self.mdl2.load_weights(os.path.join(BASE_DIR, \"models\", \"RefinementNetwork.h5\"))\n        # Predict approximate ABP waveform\n        self.mdl1 = UNetDS64(1024)",
+        "detail": "main_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNet(length, n_channel=1):\n    \"\"\"\n        Standard U-Net\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetWide64",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNetWide64(length, n_channel=1):\n    \"\"\"\n       Wider U-Net with kernels multiples of 64\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetDS64",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNetDS64(length, n_channel=1):\n    \"\"\"\n        Deeply supervised U-Net with kernels multiples of 64\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetWide40",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNetWide40(length, n_channel=1):\n    \"\"\"\n       Wider U-Net with kernels multiples of 40\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetWide48",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNetWide48(length, n_channel=1):\n    \"\"\"\n       Wider U-Net with kernels multiples of 48\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UNetLite",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def UNetLite(length, n_channel=1):\n    \"\"\"\n       Shallower U-Net\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "MultiResUNet1D",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def MultiResUNet1D(length, n_channel=1):\n    \"\"\"\n       1D MultiResUNet\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "MultiResUNetDS",
+        "kind": 2,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "def MultiResUNetDS(length, n_channel=1):\n    \"\"\"\n       1D Deeply Supervised MultiResUNet\n    Arguments:\n        length {int} -- length of the input signal\n    Keyword Arguments:\n        n_channel {int} -- number of channels in the output (default: {1})\n    Returns:\n        keras.model -- created model\n    \"\"\"",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Processor",
+        "kind": 6,
+        "importPath": "processor",
+        "description": "processor",
+        "peekOfCode": "class Processor:\n    def median_filter(self, signal, kernel_size=5):\n        return medfilt(signal, kernel_size)\n    def zscore_outlier_impute(self, signal, threshold=3):\n        signal = np.array(signal).flatten()\n        mean, std = np.mean(signal), np.std(signal)\n        z_scores = np.abs((signal - mean) / std)\n        clean_signal = signal.copy()\n        for i in range(len(signal)):\n            if z_scores[i] > threshold:",
+        "detail": "processor",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 6,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "class config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.abspath(__file__))\nDEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "BATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "sample_rate",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "sample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "segment_seconds",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "segment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "target_samples",
+        "kind": 5,
+        "importPath": "setting",
+        "description": "setting",
+        "peekOfCode": "target_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_abp_waveform",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def visualize_abp_waveform(X_test: np.ndarray, Y_test_pred):\n    \"\"\"\n        An interactive way to predict the ABP waveform from PPG signal\n        from the test data.\n        Ground truth, prediction from approximation network and refinement network\n        are presented, and a comparison is also demonstrated\n    \"\"\"\n    # Y_test_pred_approximate = np.array(Y_test_pred_approximate)\n    ppg_signal = np.squeeze(X_test)          # (1024,)\n    abp_signal_pred = np.squeeze(Y_test_pred) # (1024,)# series for time axis",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_abp_with_sbp_dbp",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def plot_abp_with_sbp_dbp(abp_signal, sbp_idx, dbp_idx):\n    abp_signal = np.array(abp_signal).flatten()\n    plt.plot(abp_signal, label=\"ABP\")\n    plt.plot(sbp_idx, abp_signal[sbp_idx], 'ro', label=\"SBP\")\n    plt.plot(dbp_idx, abp_signal[dbp_idx], 'go', label=\"DBP\")\n    plt.legend()\n    plt.title(\"ABP waveform with SBP and DBP points\")\n    plt.xlabel(\"Time (samples)\")\n    plt.ylabel(\"Pressure (mmHg)\")\n    plt.grid()",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "model_path",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "model_path = os.path.join(BASE_DIR, 'trained_model', 'cnn-lstm', 'best_model.pth')\ndef visualize_abp_waveform(X_test: np.ndarray, Y_test_pred):\n    \"\"\"\n        An interactive way to predict the ABP waveform from PPG signal\n        from the test data.\n        Ground truth, prediction from approximation network and refinement network\n        are presented, and a comparison is also demonstrated\n    \"\"\"\n    # Y_test_pred_approximate = np.array(Y_test_pred_approximate)\n    ppg_signal = np.squeeze(X_test)          # (1024,)",
+        "detail": "utils",
+        "documentation": {}
+    }
+]

@@ -2,10 +2,19 @@
     Models used in experiments
 """
 
-from keras.layers import Input, Conv1D, MaxPooling1D, UpSampling1D, concatenate, BatchNormalization, Activation, add
-from keras.models import Model, model_from_json
-from keras.optimizers import Adam
-from keras.callbacks import ModelCheckpoint
+from keras.layers import (
+    Activation,
+    BatchNormalization,
+    Conv1D,
+    Input,
+    MaxPooling1D,
+    UpSampling1D,
+    add,
+    concatenate,
+)
+from keras.models import Model
+
+
 
 def UNet(length, n_channel=1):
     """
@@ -787,3 +796,5 @@ def MultiResUNetDS(length, n_channel=1):
     model = Model(inputs=[inputs], outputs=[out,level1,level2,level3,level4])
 
     return model
+
+
