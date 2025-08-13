@@ -9,7 +9,11 @@ from pydantic import BaseModel
 
 from main_pipeline import BloodPressureInferencePipeline
 import os
-
+import torch, torchvision
+print(torch.__version__, torchvision.__version__)
+print("CUDA available:", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print(torch.cuda.get_device_name(0))
 # def convert_to_mp4(input_path):
 #     base, _ = os.path.splitext(input_path)
 #     output_path = base + ".mp4"

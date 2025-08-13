@@ -71,15 +71,15 @@ if __name__ == "__main__":
     bp_inference_pipeline = BloodPressureInferencePipeline()
     writer = SummaryWriter(log_dir="runs/bp_eval")
     
-    test_csv = os.path.join(BASE_DIR, "data", "test", "ground_truth.csv")
-    val_csv = os.path.join(BASE_DIR, "data", "val", "ground_truth.csv")
+    test_csv = os.path.join(BASE_DIR, "data", "test.csv")
+    val_csv = os.path.join(BASE_DIR, "data", "val.csv")
 
     last_step = load_last_step(STEP_FILE)
     step = last_step + 1
     save_last_step(STEP_FILE, step)
-
-    evaluate_dataset(os.path.join(BASE_DIR, "data", "test"), test_csv, writer, "test", step=step)
-    evaluate_dataset(os.path.join(BASE_DIR, "data", "val"), val_csv, writer, "val", step=step)
+    video_folder = os.path.join(BASE_DIR, "data", "video")
+    evaluate_dataset(video_folder, test_csv, writer, "test", step=step)
+    evaluate_dataset(video_folder, val_csv, writer, "val", step=step)
     
     save_last_step(STEP_FILE, step)
     writer.close()

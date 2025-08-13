@@ -1,4 +1,4 @@
-
+--index-url https://download.pytorch.org/whl/cu121
 h5py
 fastapi
 matplotlib
@@ -15,3 +15,18 @@ tensorflow
 uvicorn
 seaborn
 python-multipart
+mediapipe
+numba
+cupy
+torchvision
+plotly
+ipywidgets
+lmfit
+cusignal
+tables
+kaleido
+peakutils
+biosppy
+scikit-image
+autorank
+scikit_posthocs

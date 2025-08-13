@@ -880,6 +880,14 @@
         "documentation": {}
     },
     {
+        "label": "Pipeline",
+        "importPath": "pyVHR.analysis.pipeline",
+        "description": "pyVHR.analysis.pipeline",
+        "isExtraImport": true,
+        "detail": "pyVHR.analysis.pipeline",
+        "documentation": {}
+    },
+    {
         "label": "predict_test_data",
         "importPath": "predict_test",
         "description": "predict_test",
@@ -1031,6 +1039,15 @@
         "description": "pydantic",
         "isExtraImport": true,
         "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "torch,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.",
+        "description": "torch.",
+        "detail": "torch.",
         "documentation": {}
     },
     {
@@ -1681,7 +1698,7 @@
         "kind": 6,
         "importPath": "bp_extractor",
         "description": "bp_extractor",
-        "peekOfCode": "class BPExtractor():\n    def __init__(self, extract_config=None):\n        \"\"\"\n        Initialize the BPExtractor class.\n        \"\"\"\n        self.extract_config = extract_config or config\n        self.fps = None\n    def read_video(self, video_path):\n        \"\"\"\n        Read the video and return the list of frames.",
+        "peekOfCode": "class BPExtractor:\n    def __init__(self, extract_config=None):\n        \"\"\"\n        Initialize the BPExtractor class.\n        \"\"\"\n        self.extract_config = extract_config or config\n        self.fps = 30\n    def read_video(self, video_path):\n        \"\"\"\n        Read the video and return the list of frames.",
         "detail": "bp_extractor",
         "documentation": {}
     },

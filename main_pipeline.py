@@ -1,6 +1,7 @@
 import pickle
-from setting import config, BASE_DIR
 import os
+from setting import config, BASE_DIR
+
 from models import MultiResUNet1D, UNetDS64
 from processor import Processor
 from bp_extractor import BPExtractor
@@ -80,7 +81,7 @@ class BloodPressureInferencePipeline:
         sbp_vals, dbp_vals, sbp_idx, dbp_idx = self.extract_sbp_dbp(
             abp_pred, distance=distance
         )
-        sbp, dbp = np.median(sbp_vals), np.median(dbp_vals)
+        sbp, dbp = np.mean(sbp_vals), np.mean(dbp_vals)
 
         map_val = (2 * dbp + sbp) / 3
 
@@ -95,3 +96,8 @@ class BloodPressureInferencePipeline:
         }
         print(result)
         return result
+
+if __name__ == "__main__":
+    bp_inference_pipeline = BloodPressureInferencePipeline()
+    data = bp_inference_pipeline.predict_test_data("data/video/Video_20250813_140108_336 - Nguyên Hà.mp4")
+    print(data)
