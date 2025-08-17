@@ -78,7 +78,7 @@ if __name__ == "__main__":
     step = last_step + 1
     save_last_step(STEP_FILE, step)
     video_folder = os.path.join(BASE_DIR, "data", "video")
-    evaluate_dataset(video_folder, test_csv, writer, "test", step=step)
+    # evaluate_dataset(video_folder, test_csv, writer, "test", step=step)
     evaluate_dataset(video_folder, val_csv, writer, "val", step=step)
     
     save_last_step(STEP_FILE, step)
