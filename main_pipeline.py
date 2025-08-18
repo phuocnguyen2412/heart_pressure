@@ -54,9 +54,12 @@ class BloodPressureInferencePipeline:
         # Normalize and reshape PPG input
         min_ppg, max_ppg = self.meta["min_ppg"], self.meta["max_ppg"]
         min_abp, max_abp = self.meta["min_abp"], self.meta["max_abp"]
+        #Cắt bớt các giá trị ngoài khoảng min-max
         ppg_signal = self.processor.clip_to_range(ppg_signal, min_ppg, max_ppg)
+        #Chuẩn hóa các tín hiệu về khoảng [0, 1]
         ppg_norm = self.processor.min_max_scaler(ppg_signal, min_ppg, max_ppg)
 
+        # UNETDS64 and MultiResUNet1D prediction
         refined_abp = self.predict_abp_from_ppg(ppg_norm)
 
         # Denormalize ABP prediction
