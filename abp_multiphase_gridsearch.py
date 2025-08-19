@@ -361,13 +361,16 @@ class ABPMultiPhaseGridSearch:
         print(f"📊 Total combinations to test: {total_combinations}")
         print(f"🔄 Default parameters will be tested FIRST")
         
-        # Show parameter grid
-        print(f"\\n📋 Parameter grid:")
+        # Show parameter grid        print(f"\\n📋 Parameter grid:")
         for param, values in phase_config['param_grid'].items():
             print(f"  {param}: {values}")
         
         results = []
-          # Run experiments
+        
+        # Initialize CSV file with header (if not exists)
+        self.initialize_csv_file(phase_key)
+        
+        # Run experiments
         for i, params in enumerate(param_combinations):
             print(f"\\n{'='*80}")
             print(f"🧪 EXPERIMENT {i+1}/{total_combinations} ({phase_key})")
@@ -378,19 +381,103 @@ class ABPMultiPhaseGridSearch:
             result = self.run_single_experiment(params, phase_key)
             if result:
                 results.append(result)
+                
+                # Append this single result to CSV immediately
+                self.append_single_result_to_csv(phase_key, result)
+                print(f"💾 Progress saved: {len(results)}/{total_combinations} experiments")
         
         print(f"\\n{'='*80}")
         print(f"✅ {phase_key.upper()} COMPLETED!")
+        print(f"💾 Final CSV: abp_gridsearch_{phase_key}_results.csv ({len(results)} experiments)")
         print(f"{'='*80}")
-        
-        # Save final phase results (only once at the end)
-        if results:
-            self.save_phase_results(phase_key, results)
         
         # Store phase results
         self.phase_results[phase_key] = results
         return results
     
+    def initialize_csv_file(self, phase_key):
+        """Initialize CSV file with header if it doesn't exist"""
+        results_file = os.path.join(BASE_DIR, f"abp_gridsearch_{phase_key}_results.csv")
+        
+        if not os.path.exists(results_file):
+            # Create empty CSV with header
+            header_row = {
+                'phase': '',
+                'butter_lowpass_cutoff': '',
+                'distance_multiplier': '',
+                'window_size_seconds': '',
+                'lpf_cutoff': '',
+                'hpf_cutoff': '',
+                'bpf_multiplier': '',
+                'lpf_order': '',
+                'bpf_mincut': '',
+                'systolic_mae': '',
+                'systolic_mse': '',
+                'systolic_rmse': '',
+                'systolic_r2': '',
+                'diastolic_mae': '',
+                'diastolic_mse': '',
+                'diastolic_rmse': '',
+                'diastolic_r2': '',
+                'abp_r2_combined': '',
+                'abp_mae_combined': '',
+                'abp_combined_score': '',
+                'videos_processed': ''
+            }
+            
+            # Write header only
+            df_header = pd.DataFrame([header_row])
+            df_header.to_csv(results_file, index=False, header=True)
+            # Remove the empty data row, keep only header
+            df_empty = pd.DataFrame(columns=list(header_row.keys()))
+            df_empty.to_csv(results_file, index=False)
+            print(f"📄 Created CSV file: {results_file}")
+    
+    def append_single_result_to_csv(self, phase_key, result):
+        """Append a single experiment result to CSV file"""
+        results_file = os.path.join(BASE_DIR, f"abp_gridsearch_{phase_key}_results.csv")
+        
+        # Prepare single row
+        row = {}
+        row['phase'] = result['phase']
+        
+        # Add all possible parameters (fill with empty if not present)
+        param_keys = ['butter_lowpass_cutoff', 'distance_multiplier', 'window_size_seconds', 
+                     'lpf_cutoff', 'hpf_cutoff', 'bpf_multiplier', 'lpf_order', 'bpf_mincut']
+        for key in param_keys:
+            row[key] = result['params'].get(key, '')
+        
+        # Add metrics
+        row.update({f"systolic_{k}": v for k, v in result['systolic_metrics'].items()})
+        row.update({f"diastolic_{k}": v for k, v in result['diastolic_metrics'].items()})
+        row['abp_r2_combined'] = result['abp_r2_combined']
+        row['abp_mae_combined'] = result['abp_mae_combined']
+        row['abp_combined_score'] = result['abp_combined_score']
+        row['videos_processed'] = result['videos_processed']
+        
+        # Append to existing CSV
+        df_new_row = pd.DataFrame([row])
+        
+        # Check if file exists and has data
+        if os.path.exists(results_file):
+            # Read existing data
+            try:
+                df_existing = pd.read_csv(results_file)
+                # Append new row
+                df_combined = pd.concat([df_existing, df_new_row], ignore_index=True)
+            except pd.errors.EmptyDataError:
+                # File exists but empty, just use new row
+                df_combined = df_new_row
+        else:
+            # File doesn't exist, create with new row
+            df_combined = df_new_row
+        
+        # Save back to CSV
+        df_combined.to_csv(results_file, index=False)
+        
+        # Don't print every time to avoid spam, just return
+        return results_file
+
     def save_phase_results(self, phase_key, results):
         """Save phase results to CSV (final results only)"""
         if not results:
