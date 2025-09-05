@@ -1,5 +1,47 @@
 [
     {
+        "label": "KMeans",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedShuffleSplit",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -15,15 +57,6 @@
         "importPath": "pickle",
         "description": "pickle",
         "detail": "pickle",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -151,39 +184,7 @@
         "documentation": {}
     },
     {
-        "label": "config",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "segment_seconds",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "target_samples",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "config",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "target_samples",
+        "label": "SAMPLE_RATE",
         "importPath": "setting",
         "description": "setting",
         "isExtraImport": true,
@@ -231,7 +232,7 @@
         "documentation": {}
     },
     {
-        "label": "config",
+        "label": "SAMPLE_RATE",
         "importPath": "setting",
         "description": "setting",
         "isExtraImport": true,
@@ -239,7 +240,7 @@
         "documentation": {}
     },
     {
-        "label": "segment_seconds",
+        "label": "SEGMENT_SECONDS",
         "importPath": "setting",
         "description": "setting",
         "isExtraImport": true,
@@ -247,47 +248,7 @@
         "documentation": {}
     },
     {
-        "label": "target_samples",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
-        "importPath": "setting",
-        "description": "setting",
-        "isExtraImport": true,
-        "detail": "setting",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
+        "label": "TARGET_SAMPLES",
         "importPath": "setting",
         "description": "setting",
         "isExtraImport": true,
@@ -304,6 +265,86 @@
     },
     {
         "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "SAMPLE_RATE",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "SAMPLE_RATE",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "TARGET_SAMPLES",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "setting",
+        "description": "setting",
+        "isExtraImport": true,
+        "detail": "setting",
+        "documentation": {}
+    },
+    {
+        "label": "TARGET_SAMPLES",
         "importPath": "setting",
         "description": "setting",
         "isExtraImport": true,
@@ -376,15 +417,6 @@
         "description": "matplotlib",
         "isExtraImport": true,
         "detail": "matplotlib",
-        "documentation": {}
-    },
-    {
-        "label": "pandas",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
         "documentation": {}
     },
     {
@@ -613,7 +645,31 @@
         "documentation": {}
     },
     {
+        "label": "butter",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "filtfilt",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
         "label": "find_peaks",
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "isExtraImport": true,
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "welch",
         "importPath": "scipy.signal",
         "description": "scipy.signal",
         "isExtraImport": true,
@@ -869,22 +925,6 @@
         "description": "tqdm",
         "isExtraImport": true,
         "detail": "tqdm",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "Pipeline",
-        "importPath": "pyVHR.analysis.pipeline",
-        "description": "pyVHR.analysis.pipeline",
-        "isExtraImport": true,
-        "detail": "pyVHR.analysis.pipeline",
         "documentation": {}
     },
     {
@@ -1160,6 +1200,69 @@
         "description": "keras.models",
         "isExtraImport": true,
         "detail": "keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "df = pd.read_csv('data/Vid_Heart/video.csv')\nX_targets = df[['sys','dia','pulse/min']].values\nkmeans = KMeans(n_clusters=4, random_state=42, n_init='auto')\nclusters = kmeans.fit_predict(X_targets)\ndf['cluster'] = clusters\n# Split train vs temp\nsss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "X_targets",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "X_targets = df[['sys','dia','pulse/min']].values\nkmeans = KMeans(n_clusters=4, random_state=42, n_init='auto')\nclusters = kmeans.fit_predict(X_targets)\ndf['cluster'] = clusters\n# Split train vs temp\nsss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "kmeans",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "kmeans = KMeans(n_clusters=4, random_state=42, n_init='auto')\nclusters = kmeans.fit_predict(X_targets)\ndf['cluster'] = clusters\n# Split train vs temp\nsss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()\ntest_df.to_csv('data/Vid_Heart/test.csv', index=False)",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "clusters",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "clusters = kmeans.fit_predict(X_targets)\ndf['cluster'] = clusters\n# Split train vs temp\nsss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()\ntest_df.to_csv('data/Vid_Heart/test.csv', index=False)\nprint('Sizes:', len(train_df), len(test_df))",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "df['cluster']",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "df['cluster'] = clusters\n# Split train vs temp\nsss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()\ntest_df.to_csv('data/Vid_Heart/test.csv', index=False)\nprint('Sizes:', len(train_df), len(test_df))\nprint('Cluster dist:\\n', df.groupby('cluster').size(), '\\n')",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "sss1",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "sss1 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=42)\ntrain_idx, temp_idx = next(sss1.split(df, df['cluster']))\ntrain_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()\ntest_df.to_csv('data/Vid_Heart/test.csv', index=False)\nprint('Sizes:', len(train_df), len(test_df))\nprint('Cluster dist:\\n', df.groupby('cluster').size(), '\\n')\nprint('Train cluster:\\n', train_df['cluster'].value_counts())",
+        "detail": "data.Vid_Heart.split_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "train_df",
+        "kind": 5,
+        "importPath": "data.Vid_Heart.split_dataset",
+        "description": "data.Vid_Heart.split_dataset",
+        "peekOfCode": "train_df = df.iloc[train_idx].copy()\ntrain_df.to_csv('data/Vid_Heart/train.csv', index=False)\ntest_df  = df.iloc[temp_idx].copy()\ntest_df.to_csv('data/Vid_Heart/test.csv', index=False)\nprint('Sizes:', len(train_df), len(test_df))\nprint('Cluster dist:\\n', df.groupby('cluster').size(), '\\n')\nprint('Train cluster:\\n', train_df['cluster'].value_counts())",
+        "detail": "data.Vid_Heart.split_dataset",
         "documentation": {}
     },
     {
@@ -1442,15 +1545,6 @@
         "documentation": {}
     },
     {
-        "label": "extract_signal",
-        "kind": 2,
-        "importPath": "signal_extractor.signal_extract",
-        "description": "signal_extractor.signal_extract",
-        "peekOfCode": "def extract_signal(filename, video_path, output_folder):\n    # Đọc video\n    cap = cv2.VideoCapture(video_path)\n    fps = cap.get(cv2.CAP_PROP_FPS)\n    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))\n    duration_seconds = total_frames / fps\n    print(f\"Video FPS: {fps}, Total frames: {total_frames}, Duration: {duration_seconds:.2f}s\")\n    center_frame = total_frames // 2\n    half_seg = int((segment_seconds * fps) / 2)\n    start_frame = max(center_frame - half_seg, 0)",
-        "detail": "signal_extractor.signal_extract",
-        "documentation": {}
-    },
-    {
         "label": "SignalFiducialPointsDetector",
         "kind": 6,
         "importPath": "signal_extractor.signal_fiducial_points_detection",
@@ -1492,15 +1586,6 @@
         "importPath": "signal_extractor.signal_preprocessing",
         "description": "signal_extractor.signal_preprocessing",
         "peekOfCode": "def visualize_signal(signals, labels, output_fname, title=\"\", source=\"r_ch_mean\"):\n    plt.figure()\n    plt.title(title)\n    l_tp = [\n        f\"{source}\",\n        f\"{source}>cut_start\",\n        f\"{source}>cut_start>hpf\",\n        f\"{source}>cut_start>hpf>bpf_bpm\",\n        f\"{source}>roll_avg>sub>lpf>cut_start\"\n    ]",
-        "detail": "signal_extractor.signal_preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "process_single_signal_file",
-        "kind": 2,
-        "importPath": "signal_extractor.signal_preprocessing",
-        "description": "signal_extractor.signal_preprocessing",
-        "peekOfCode": "def process_single_signal_file(\n        file_name, output_folder\n):\n    \"\"\"\n    Xử lý 1 file tín hiệu (CSV), xuất CSV kết quả và PDF hình ảnh.\n    \"\"\"\n    import os\n    import sys\n    import pandas as pd\n    import numpy as np",
         "detail": "signal_extractor.signal_preprocessing",
         "documentation": {}
     },
@@ -1698,7 +1783,7 @@
         "kind": 6,
         "importPath": "bp_extractor",
         "description": "bp_extractor",
-        "peekOfCode": "class BPExtractor:\n    def __init__(self, extract_config=None):\n        \"\"\"\n        Initialize the BPExtractor class.\n        \"\"\"\n        self.extract_config = extract_config or config\n        self.fps = 30\n    def read_video(self, video_path):\n        \"\"\"\n        Read the video and return the list of frames.",
+        "peekOfCode": "class BPExtractor:\n    def __init__(self, extract_config=None):\n        \"\"\"\n        Initialize the BPExtractor class.\n        \"\"\"\n        self.extract_config = extract_config or config\n        self.fps = SAMPLE_RATE\n    def read_video(self, video_path):\n        \"\"\"\n        Read the video and return the list of frames.",
         "detail": "bp_extractor",
         "documentation": {}
     },
@@ -1761,7 +1846,7 @@
         "kind": 2,
         "importPath": "evaluate",
         "description": "evaluate",
-        "peekOfCode": "def save_last_step(path: str, step: int) -> None:\n    os.makedirs(os.path.dirname(path), exist_ok=True)\n    with open(path, \"w\") as f:\n        f.write(str(step))\ndef compute_metrics(predict_data, ground_truth):\n    mae = mean_absolute_error(ground_truth, predict_data)\n    mse = mean_squared_error(ground_truth, predict_data)\n    rmse = np.sqrt(mse)\n    r2 = r2_score(ground_truth, predict_data)\n    result = {\"mae\": mae, \"mse\": mse, \"rmse\": rmse, \"r2\": r2}",
+        "peekOfCode": "def save_last_step(path: str, step: int) -> None:\n    os.makedirs(os.path.dirname(path), exist_ok=True)\n    with open(path, \"w\") as f:\n        f.write(str(step))\ndef compute_metrics(predict_data, ground_truth):\n    print(predict_data)\n    print(ground_truth)\n    predict_data = np.array(predict_data)\n    ground_truth = np.array(ground_truth)\n    max_error = max(abs(ground_truth - predict_data))",
         "detail": "evaluate",
         "documentation": {}
     },
@@ -1770,7 +1855,7 @@
         "kind": 2,
         "importPath": "evaluate",
         "description": "evaluate",
-        "peekOfCode": "def compute_metrics(predict_data, ground_truth):\n    mae = mean_absolute_error(ground_truth, predict_data)\n    mse = mean_squared_error(ground_truth, predict_data)\n    rmse = np.sqrt(mse)\n    r2 = r2_score(ground_truth, predict_data)\n    result = {\"mae\": mae, \"mse\": mse, \"rmse\": rmse, \"r2\": r2}\n    return result\ndef evaluate_dataset(folder_path, csv_path, writer, dataset_name, step=0):\n    df = pd.read_csv(csv_path)\n    diastolic_preds = []",
+        "peekOfCode": "def compute_metrics(predict_data, ground_truth):\n    print(predict_data)\n    print(ground_truth)\n    predict_data = np.array(predict_data)\n    ground_truth = np.array(ground_truth)\n    max_error = max(abs(ground_truth - predict_data))\n    min_error = min(abs(ground_truth - predict_data))\n    mae = mean_absolute_error(ground_truth, predict_data)\n    mse = mean_squared_error(ground_truth, predict_data)\n    rmse = np.sqrt(mse)",
         "detail": "evaluate",
         "documentation": {}
     },
@@ -1779,7 +1864,16 @@
         "kind": 2,
         "importPath": "evaluate",
         "description": "evaluate",
-        "peekOfCode": "def evaluate_dataset(folder_path, csv_path, writer, dataset_name, step=0):\n    df = pd.read_csv(csv_path)\n    diastolic_preds = []\n    systolic_preds = []\n    for _, row in df.iterrows():\n        video_path = os.path.join(folder_path, row[\"video\"])\n        print(video_path)\n        predict_data = bp_inference_pipeline.predict_test_data(video_path)\n        diastolic_preds.append(predict_data[\"diastolic\"])\n        systolic_preds.append(predict_data[\"systolic\"])",
+        "peekOfCode": "def evaluate_dataset(folder_path, csv_path, writer, dataset_name=\"v2\", step=0):\n    import matplotlib.pyplot as plt\n    df = pd.read_csv(csv_path)\n    hr_preds = []\n    diastolic_preds = []\n    systolic_preds = []\n    for _, row in df.iterrows():\n        video_path = os.path.join(folder_path, row[\"video_name\"])\n        print(video_path)\n        predict_data = bp_inference_pipeline.predict_test_data(video_path)",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_hr",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def evaluate_hr(csv_path):\n    df = pd.read_csv(csv_path)\n    hr_preds = []\n    for _, row in df.iterrows():\n        video_path = os.path.join(BASE_DIR, \"data\", \"Vid_Heart\", row[\"video_name\"])\n        ppg_signal = bp_inference_pipeline.bp_extractor.extract_ppg_from_video(video_path)\n        hr = bp_inference_pipeline.calculate_heart_rate(ppg_signal, SAMPLE_RATE)\n        hr_preds.append(hr)\n    result_hr = compute_metrics(df[\"pulse/min\"].tolist(), hr_preds)\n    print(f\"=== {csv_path.split('/')[-1].split('.')[0].upper()} HR ===\")",
         "detail": "evaluate",
         "documentation": {}
     },
@@ -1851,7 +1945,7 @@
         "kind": 6,
         "importPath": "main_pipeline",
         "description": "main_pipeline",
-        "peekOfCode": "class BloodPressureInferencePipeline:\n    def __init__(self, extract_config=None):\n        self.extract_config = extract_config or config\n        # Load metadata\n        self.meta = pickle.load(open(os.path.join(BASE_DIR, \"data\", \"meta9.p\"), \"rb\"))\n        # Refine ABP waveform\n        self.mdl2 = MultiResUNet1D(1024)\n        self.mdl2.load_weights(os.path.join(BASE_DIR, \"models\", \"RefinementNetwork.h5\"))\n        # Predict approximate ABP waveform\n        self.mdl1 = UNetDS64(1024)",
+        "peekOfCode": "class BloodPressureInferencePipeline:\n    def __init__(self, extract_config=None):\n        self.extract_config = extract_config or config\n        # Load metadata\n        self.meta = pickle.load(open(os.path.join(BASE_DIR, \"data\", \"meta9.p\"), \"rb\"))\n        # Refine ABP waveform\n        self.mdl2 = MultiResUNet1D(TARGET_SAMPLES)\n        self.mdl2.load_weights(os.path.join(BASE_DIR, \"models\", \"RefinementNetwork.h5\"))\n        # Predict approximate ABP waveform\n        self.mdl1 = UNetDS64(TARGET_SAMPLES)",
         "detail": "main_pipeline",
         "documentation": {}
     },
@@ -1950,7 +2044,7 @@
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.abspath(__file__))\nDEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")",
+        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.abspath(__file__))\nDEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nSAMPLE_RATE = 30\nTARGET_SAMPLES = 4096\nSEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")",
         "detail": "setting",
         "documentation": {}
     },
@@ -1959,7 +2053,7 @@
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False",
+        "peekOfCode": "DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'\nBATCH_SIZE = 100000\nSAMPLE_RATE = 30\nTARGET_SAMPLES = 4096\nSEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False",
         "detail": "setting",
         "documentation": {}
     },
@@ -1968,34 +2062,34 @@
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "BATCH_SIZE = 100000\nsample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True",
+        "peekOfCode": "BATCH_SIZE = 100000\nSAMPLE_RATE = 30\nTARGET_SAMPLES = 4096\nSEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True",
         "detail": "setting",
         "documentation": {}
     },
     {
-        "label": "sample_rate",
+        "label": "SAMPLE_RATE",
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "sample_rate = 125\nsegment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8",
+        "peekOfCode": "SAMPLE_RATE = 30\nTARGET_SAMPLES = 4096\nSEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8",
         "detail": "setting",
         "documentation": {}
     },
     {
-        "label": "segment_seconds",
+        "label": "TARGET_SAMPLES",
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "segment_seconds = 8.192\ntarget_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
+        "peekOfCode": "TARGET_SAMPLES = 4096\nSEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
         "detail": "setting",
         "documentation": {}
     },
     {
-        "label": "target_samples",
+        "label": "SEGMENT_SECONDS",
         "kind": 5,
         "importPath": "setting",
         "description": "setting",
-        "peekOfCode": "target_samples = int(sample_rate * segment_seconds)\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
+        "peekOfCode": "SEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE\nclass config:\n    filename = os.path.join(BASE_DIR, \"data\", \"IMG_1157.MOV\")\n    video_directory = os.path.join(BASE_DIR, \"data\", \"videos\")\n    output_folder = os.path.join(BASE_DIR, \"data\", \"output\")\n    display = False\n    force_redo = True\n    number_of_cpus = 8\n    params = os.path.join(BASE_DIR, \"signal_extractor\", \"params.yaml\")",
         "detail": "setting",
         "documentation": {}
     },

@@ -7,7 +7,7 @@ import cv2
 import matplotlib
 from scipy.signal import resample, find_peaks
 
-from setting import config, segment_seconds, target_samples
+
 
 matplotlib.use("agg")
 import matplotlib.pyplot as plt
@@ -154,82 +154,6 @@ def visualize_signal(signals, labels, output_fname, title=""):
     plt.close(fig)
     return True
 
-
-# lets make this one parallel
-def extract_signal(filename, video_path, output_folder):
-    # Đọc video
-    cap = cv2.VideoCapture(video_path)
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    duration_seconds = total_frames / fps
-    print(f"Video FPS: {fps}, Total frames: {total_frames}, Duration: {duration_seconds:.2f}s")
-
-
-    center_frame = total_frames // 2
-    half_seg = int((segment_seconds * fps) / 2)
-    start_frame = max(center_frame - half_seg, 0)
-    end_frame = min(center_frame + half_seg, total_frames)
-    num_frames_to_read = end_frame - start_frame
-
-    print(f"Cropping from frame {start_frame} to {end_frame} (~{num_frames_to_read} frames)")
-
-    # Đọc các frame cần thiết
-    list_of_frames = []
-    cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
-    for _ in range(num_frames_to_read):
-        ret, frame = cap.read()
-        h, w, _ = frame.shape
-        x1, x2 = int(w * 0.25), int(w * 0.75)
-        y1, y2 = int(h * 0.25), int(h * 0.75)
-        roi = frame[y1:y2, x1:x2]
-
-        frame_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
-        if not ret:
-            break
-        list_of_frames.append(frame_rgb)
-    cap.release()
-
-    se = SignalExtractor(int(fps))
-    csv_fpath = os.path.join(output_folder, filename + ".csv")
-
-
-    columns, extracted_s = [], []
-
-
-
-
-    print("Extracting signal from", video_path, "with", len(list_of_frames))
-
-    extractors = [{'functions': ['luma_component_mean'],
-                   'name': 'luma_mean',
-                   'parameters': {'initial_skip_seconds': 0}},
-                  {'functions': ['red_channel_mean'],
-                   'name': 'r_ch_mean',
-                   'parameters': {'initial_skip_seconds': 0}}]
-    for extractor in extractors:
-        columns.append(extractor["name"])
-        assert len(extractor["functions"]) == 1, "Only one extractor function is supported, check config.json"
-        for fun_name in extractor["functions"]:
-            fun = getattr(se, fun_name)
-            f_output = fun(frames=list_of_frames, **extractor["parameters"])
-            if len(f_output) != target_samples:
-                f_output = resample(f_output, target_samples)
-            print("Extracted signal with function", fun_name, "with shape", f_output.shape)
-        extracted_s.append(f_output.tolist())
-    extracted_s = np.array(extracted_s) * -1
-    assert extracted_s.ndim == 2, "Different functions resulted in different length of extracted signal"
-    df = pd.DataFrame(extracted_s.T, columns=columns)
-    df.to_csv(csv_fpath, sep=",", float_format="%.4f", index=False)
-
-
-    # Visualize the signals
-    n_extractors = len(extractors)
-    csv_fname = filename + ".csv"
-    pdf_fname = filename + ".pdf"
-    df = pd.read_csv(os.path.join(config.output_folder, filename, csv_fname), index_col=False)
-    df.iloc[30:].plot(kind="line", subplots=True, figsize=(16, 4*n_extractors), layout=(n_extractors, 1), grid=True)
-    plt.savefig(os.path.join(config.output_folder, filename, pdf_fname), bbox_inches="tight")
-    plt.close()
 
 
 

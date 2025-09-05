@@ -1,6 +1,7 @@
 from scipy.signal import medfilt
 import numpy as np
 from scipy.signal import butter, filtfilt
+from setting import TARGET_SAMPLES
 
 class Processor:
     def median_filter(self, signal, kernel_size=5):
@@ -27,7 +28,7 @@ class Processor:
         signal = np.array(signal)
         signal = self.clip_to_range(signal, min_val, max_val)
         signal = (signal - min_val) / (max_val - min_val)
-        signal = signal.reshape(1, 1024, 1)
+        signal = signal.reshape(1, TARGET_SAMPLES, 1)
         return signal
 
     def inverse_min_max_scaler(self, signal, min_val, max_val):

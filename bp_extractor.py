@@ -7,13 +7,13 @@ import pandas as pd
 from scipy.signal import resample
 import torch
 
-from setting import config, segment_seconds, target_samples
+from setting import SAMPLE_RATE, SEGMENT_SECONDS, TARGET_SAMPLES, config
 from signal_extractor.signal_extract import SignalExtractor
 from signal_extractor.signal_preprocessing import (
     SignalPreprocessor,
     visualize_signal,
 )
-from pyVHR.analysis.pipeline import Pipeline
+
 
 
 class BPExtractor:
@@ -22,7 +22,7 @@ class BPExtractor:
         Initialize the BPExtractor class.
         """
         self.extract_config = extract_config or config
-        self.fps = 30
+        self.fps = SAMPLE_RATE
 
     def read_video(self, video_path):
         """
@@ -37,7 +37,7 @@ class BPExtractor:
         print(f"Duration: {duration_seconds:.2f}s")
 
         center_frame = total_frames // 2
-        half_seg = int((segment_seconds * self.fps) / 2)
+        half_seg = int((SEGMENT_SECONDS * self.fps) / 2)
         start_frame = max(center_frame - half_seg, 0)
         end_frame = min(center_frame + half_seg, total_frames)
         num_frames_to_read = end_frame - start_frame
@@ -55,15 +55,17 @@ class BPExtractor:
             x1, x2 = int(w * 0.25), int(w * 0.75)
             y1, y2 = int(h * 0.25), int(h * 0.75)
             roi = frame[y1:y2, x1:x2]
-
             frame_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+
             if not ret:
                 break
             list_of_frames.append(frame_rgb)
         cap.release()
 
         return list_of_frames
-
+    
+   
+        
     def extract_signal(self, filename, video_path, output_folder):
         list_of_frames = self.read_video(video_path)
 
@@ -93,8 +95,8 @@ class BPExtractor:
             for fun_name in extractor["functions"]:
                 fun = getattr(se, fun_name)
                 f_output = fun(frames=list_of_frames, **extractor["parameters"])
-                if len(f_output) != target_samples:
-                    f_output = resample(f_output, target_samples)
+                if len(f_output) != TARGET_SAMPLES:
+                    f_output = resample(f_output, TARGET_SAMPLES)
                 print(
                     "Extracted signal with function",
                     fun_name,
@@ -132,7 +134,7 @@ class BPExtractor:
         """
         Xử lý 1 file tín hiệu (CSV), xuất CSV kết quả và PDF hình ảnh.
         """
-        sp = SignalPreprocessor(125)
+        sp = SignalPreprocessor(SAMPLE_RATE)
         filepath = os.path.join(output_folder, file_name + ".csv")
 
         csv_fpath = os.path.join(output_folder, file_name + "_preprocessed.csv")
@@ -164,7 +166,7 @@ class BPExtractor:
                         "name": "dynamic_bpm",
                     },
                 ],
-                "sources": ["luma_mean"],
+                "sources": ["r_ch_mean"],
             }
         }
 
@@ -227,7 +229,7 @@ class BPExtractor:
                 output_fname=img_fpath,
                 source="r_ch_mean",
             )
-            return df["luma_mean>cut_start>hpf>bpf_bpm"].values
+            return df["r_ch_mean>roll_avg>sub>lpf>cut_start"].values
         except Exception as e:
             traceback.print_exc()
             print(e)
@@ -245,62 +247,3 @@ class BPExtractor:
         print("Signal preprocessing completed for", video_name)
         return processed_signal
         
-        # pipeline = Pipeline()
-        # method = "cpu_POS"
-        # wsize = 8
-
-        # roi_approach = "patches"
-        # use_cuda = torch.cuda.is_available()
-
-        # # Ước lượng fps để quyết định pre_filt
-        # cap = cv2.VideoCapture(video_path)
-        # fps = cap.get(cv2.CAP_PROP_FPS) or 30
-        # nframes = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
-
-        # cap.release()
-        # frames_per_win = int(fps * wsize)
-        # duration = nframes / max(fps, 1)
-        # wsize = max(3, min(6, int(duration // 2)))  # đảm bảo tạo được ≥1 window
-        # print(f"Wsize: {wsize}")
-        # pre_filt_flag = frames_per_win > 45  # đủ dài mới bật lọc trước
-
-        # # params
-        # roi_approach = 'holistic'   # 'holistic' or 'patches'
-        # bpm_est = 'clustering'         # BPM final estimate, if patches choose 'medians' or 'clustering'
-        # method = 'cpu_OMIT'       # one of the methods implemented in pyVHR
-        # pipe = Pipeline()          # object to execute the pipeline
-
-        # # run
-        # bvps, timesES, bpmES = pipe.run_on_video(video_path,
-        #                                         winsize=wsize,
-        #                                         roi_method='convexhull',
-        #                                         roi_approach=roi_approach,
-        #                                         method=method,
-        #                                         estimate=bpm_est,
-        #                                         patch_size=40,
-        #                                         RGB_LOW_HIGH_TH=(5,230),
-        #                                         Skin_LOW_HIGH_TH=(5,230),
-        #                                         pre_filt=True,
-        #                                         post_filt=True,
-        #                                         cuda=True,
-        #                                         verb=True,
-        # )
-        # print(bvps)
-        # print(timesES)
-        # print(bpmES)
-        # print(f"Nhịp tim ước lượng: {bpmES:.2f} bpm")
-        # print(f"Độ dài tín hiệu rPPG: {len(bvps)}")
-
-        # # Đảm bảo lấy đúng 1024 giá trị
-        # if len(bvps) >= 1024:
-        #     ppg_1024 = bvps[:1024]
-        # else:
-        #     # Nội suy nếu ít hơn 1024
-        #     ppg_1024 = np.interp(
-        #         np.linspace(0, len(bvps)-1, 1024),
-        #         np.arange(len(bvps)),
-        #         bvps
-        #     )
-
-        # print("Shape:", ppg_1024.shape)
-        # return ppg_1024

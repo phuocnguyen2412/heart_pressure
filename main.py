@@ -79,7 +79,7 @@ async def upload_ppg(file: UploadFile = File(...)):
         systolic=float(output['systolic']),
         diastolic=float(output['diastolic']),
         mean=float(output['mean']),
-        hr= float(output['hr']),
+        hr= float(output['hr_by_ppg']),
     )
 
 @app.get("/ping")

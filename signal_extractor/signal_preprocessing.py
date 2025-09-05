@@ -11,11 +11,8 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, resample
 from scipy.signal import lfilter, filtfilt
 import scipy.fftpack
-import os
-import sys
-import yaml
-from setting import config, target_samples
 
+from setting import SAMPLE_RATE
 
 class SignalPreprocessor():
 
@@ -51,11 +48,16 @@ class SignalPreprocessor():
         freq_x = np.linspace(0.0, 1.0 / (2.0 * T), N // 2)
 
         max_cutoff = freq_x[np.argmax(signal_fft)] * multiplier
-        # Thêm điều kiện kiểm tra và sửa lỗi
-        if max_cutoff <= 0:
-            # Sử dụng giá trị mặc định nếu max_cutoff không hợp lệ
-            max_cutoff = max(mincut, 0.001)  # Sử dụng mincut nếu được cung cấp, nếu không thì dùng 0.001
-            print(f"Warning: Calculated cutoff frequency was <= 0, using {max_cutoff} instead")
+        # Thêm điều kiện kiểm tra và sửa lỗi, kẹp vào (0, Nyquist)
+        nyq = 0.5 * self.sample_rate
+        original_cutoff = max_cutoff
+        # Kẹp cận dưới theo mincut, tránh 0
+        max_cutoff = max(max_cutoff, max(mincut, 0.001))
+        # Kẹp cận trên để không vượt Nyquist
+        if max_cutoff >= nyq:
+            max_cutoff = 0.99 * nyq
+        if original_cutoff != max_cutoff:
+            print(f"Warning: cutoff adjusted from {original_cutoff:.6f} to {max_cutoff:.6f} (Nyquist={nyq:.6f})")
         y = self.butter_highpass_filter(no_nan_signal, max_cutoff, order)
         y = np.concatenate((np.full(n_nan, np.nan), y), axis=0)
 
@@ -96,6 +98,10 @@ class SignalPreprocessor():
             no_nan_signal = signal[~np.isnan(signal)]
         nyq = 0.5 * self.sample_rate
         normal_cutoff = cutoff / nyq
+        # Kẹp giá trị chuẩn hóa vào (0,1) để tránh lỗi từ scipy
+        if not np.isfinite(normal_cutoff):
+            normal_cutoff = 0.001
+        normal_cutoff = min(max(normal_cutoff, 1e-6), 0.999)
         b, a = butter(order, normal_cutoff, btype='high', analog=False)
         y = filtfilt(b, a, no_nan_signal)
         y = np.concatenate((np.full(n_nan, np.nan), y), axis=0)
@@ -177,92 +183,3 @@ def visualize_signal(signals, labels, output_fname, title="", source="r_ch_mean"
     plt.savefig(output_fname, bbox_inches="tight")
     plt.close("all")
     return True
-
-def process_single_signal_file(
-        file_name, output_folder
-):
-    """
-    Xử lý 1 file tín hiệu (CSV), xuất CSV kết quả và PDF hình ảnh.
-    """
-    import os
-    import sys
-    import pandas as pd
-    import numpy as np
-    sp = SignalPreprocessor(125)
-    filepath = os.path.join(output_folder, file_name + ".csv")
-
-    csv_fpath = os.path.join(output_folder, file_name + "_preprocessed.csv")
-    img_fpath = os.path.join(output_folder, file_name + "_preprocessed.pdf")
-    params = {
-        'preprocessor': {'filter_chains': [{'flist': [{'name': 'roll_avg',
-                                                       'params': {'window_size_seconds': 1.01}},
-                                                      {'name': 'sub', 'params': {}},
-                                                      {'name': 'lpf',
-                                                       'params': {'filter_order': 2,
-                                                                  'low': 4}},
-                                                      {'name': 'cut_start',
-                                                       'params': {'seconds': 0}}],
-                                            'name': 'chain2'},
-                                           {'flist': [{'name': 'cut_start',
-                                                       'params': {'seconds': 0}},
-                                                      {'name': 'hpf',
-                                                       'params': {'cutoff': 0.5,
-                                                                  'order': 1}},
-                                                      {'name': 'bpf_bpm',
-                                                       'params': {'mincut': 0.01,
-                                                                  'multiplier': 3,
-                                                                  'order': 1}}],
-                                            'name': 'dynamic_bpm'}],
-                         'sources': ['r_ch_mean']}
-    }
-
-    try:
-
-        to_plot, to_plot_names = [], []
-        extracted_s = pd.read_csv(filepath, index_col=False, encoding_errors="ignore")
-        preprocessed, columns = [], []
-
-
-        for source in params["preprocessor"]["sources"]:
-            assert source in extracted_s.columns.values, "%s not in columns %s" % (source, filepath)
-            for filter_chain in params["preprocessor"]["filter_chains"]:
-                fun_list = filter_chain["flist"]
-                signal_at_step_j = [extracted_s[source].values]
-                name_at_step_j = [source]
-                for j, fun_dict in enumerate(fun_list):
-                    # apply function
-                    fun = getattr(sp, sp.shorter_names[fun_dict["name"]])
-                    filtered_j = fun(
-                        signal_at_step_j[-1],
-                        prev_x=signal_at_step_j[-2] if len(signal_at_step_j) > 1 else None,
-                        **fun_dict["params"]
-                    )
-                    new_name = "%s>%s" % (name_at_step_j[-1], fun_dict["name"])
-
-                    if len(filtered_j) == len(extracted_s[source].values):
-                        signal_at_step_j.append(np.real(filtered_j))  # discard imaginary part if any
-                        name_at_step_j.append(new_name)
-                    else:
-                        to_plot.append(filtered_j)
-                        to_plot_names.append(new_name)
-
-                preprocessed.extend(signal_at_step_j)
-                columns.extend(name_at_step_j)
-
-        preprocessed = np.array(preprocessed)
-        assert preprocessed.ndim == 2, "Different functions resulted in different length of preprocessed signal"
-        df = pd.DataFrame(preprocessed.T, columns=columns)
-        df.to_csv(csv_fpath, sep=",", float_format="%.8f", index=False)
-
-        everything_to_plot = [a.tolist() for a in preprocessed] + to_plot
-        everything_to_plot_labels = columns + to_plot_names
-
-        visualize_signal(
-            everything_to_plot,
-            labels=everything_to_plot_labels,
-            output_fname=img_fpath, source="r_ch_mean")
-    except Exception as e:
-        traceback.print_exc()
-        print(e)
-
-
