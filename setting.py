@@ -7,7 +7,7 @@ DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 BATCH_SIZE = 100000
 SAMPLE_RATE = 30
-TARGET_SAMPLES = 4096
+TARGET_SAMPLES = 1024
 SEGMENT_SECONDS = TARGET_SAMPLES / SAMPLE_RATE
 
 class config:

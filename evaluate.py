@@ -1,4 +1,4 @@
-from main_pipeline import BloodPressureInferencePipeline
+from bp_extractor import BPExtractor
 import pandas as pd
 import numpy as np
 import os
@@ -6,10 +6,8 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from pprint import pprint
 
 from setting import BASE_DIR, SAMPLE_RATE
-from torch.utils.tensorboard import SummaryWriter
+import matplotlib.pyplot as plt
 
-import mlflow
-import tempfile
 
 STEP_FILE = os.path.join(BASE_DIR, "runs", "bp_eval", "last_step.txt")
 
@@ -42,7 +40,7 @@ def compute_metrics(predict_data, ground_truth):
 
 
 def evaluate_dataset(folder_path, csv_path, writer, dataset_name="v2", step=0):
-    import matplotlib.pyplot as plt
+
 
     df = pd.read_csv(csv_path)
     hr_preds = []
@@ -61,43 +59,53 @@ def evaluate_dataset(folder_path, csv_path, writer, dataset_name="v2", step=0):
     # Tính metrics
     result_systolic = compute_metrics(df["sys"].tolist(), systolic_preds)
     result_diastolic = compute_metrics(df["dia"].tolist(), diastolic_preds)
-    result_hr = compute_metrics(df["pulse/min"].tolist(), hr_preds)
-    print(f"=== {dataset_name.upper()} HR ===")
-    pprint(result_hr)
+    hr_instant_hr = compute_metrics(df["hr_instant_hr"].tolist(), hr_preds)
+    hr_inpulse = compute_metrics(df["hr_inpulse"].tolist(), hr_preds)
+    print(f"=== {dataset_name.upper()} hr_instant_hr ===")
+    pprint(hr_instant_hr)
+    print(f"=== {dataset_name.upper()} hr_inpulse ===")
+    pprint(hr_inpulse)
     
-    print(f"=== {dataset_name.upper()} Systolic ===")
-    pprint(result_systolic)
-    print(f"=== {dataset_name.upper()} Diastolic ===")
-    pprint(result_diastolic)
+    # print(f"=== {dataset_name.upper()} Systolic ===")
+    # pprint(result_systolic)
+    # print(f"=== {dataset_name.upper()} Diastolic ===")
+    # pprint(result_diastolic)
 
     # Vẽ biểu đồ so sánh ground truth và predict cho từng loại
     plt.figure(figsize=(15, 4))
     plt.subplot(1, 3, 1)
-    plt.plot(df["pulse/min"].tolist(), label="HR Truth", marker='o')
-    plt.plot(hr_preds, label="HR Predict", marker='x')
-    plt.title(f"{dataset_name.upper()} - HR")
+    plt.plot(df["hr_instant_hr"].tolist(), label="hr_instant_hr Truth", marker='o')
+    plt.plot(hr_preds, label="hr_instant_hr Predict", marker='x')
+    plt.title(f"{dataset_name.upper()} - hr_instant_hr")
     plt.xlabel("Sample")
     plt.ylabel("HR (bpm)")
     plt.legend()
     plt.grid(True)
 
     plt.subplot(1, 3, 2)
-    plt.plot(df["sys"].tolist(), label="Systolic Truth", marker='o')
-    plt.plot(systolic_preds, label="Systolic Predict", marker='x')
-    plt.title(f"{dataset_name.upper()} - Systolic")
+    plt.plot(df["hr_inpulse"].tolist(), label="hr_inpulse Truth", marker='o')
+    plt.plot(hr_preds, label="hr_inpulse Predict", marker='x')
+    plt.title(f"{dataset_name.upper()} - hr_inpulse")
     plt.xlabel("Sample")
-    plt.ylabel("Systolic (mmHg)")
+    plt.ylabel("HR (bpm)")
     plt.legend()
     plt.grid(True)
+    # plt.plot(df["sys"].tolist(), label="Systolic Truth", marker='o')
+    # plt.plot(systolic_preds, label="Systolic Predict", marker='x')
+    # plt.title(f"{dataset_name.upper()} - Systolic")
+    # plt.xlabel("Sample")
+    # plt.ylabel("Systolic (mmHg)")
+    # plt.legend()
+    # plt.grid(True)
 
-    plt.subplot(1, 3, 3)
-    plt.plot(df["dia"].tolist(), label="Diastolic Truth", marker='o')
-    plt.plot(diastolic_preds, label="Diastolic Predict", marker='x')
-    plt.title(f"{dataset_name.upper()} - Diastolic")
-    plt.xlabel("Sample")
-    plt.ylabel("Diastolic (mmHg)")
-    plt.legend()
-    plt.grid(True)
+    # plt.subplot(1, 3, 3)
+    # plt.plot(df["dia"].tolist(), label="Diastolic Truth", marker='o')
+    # plt.plot(diastolic_preds, label="Diastolic Predict", marker='x')
+    # plt.title(f"{dataset_name.upper()} - Diastolic")
+    # plt.xlabel("Sample")
+    # plt.ylabel("Diastolic (mmHg)")
+    # plt.legend()
+    # plt.grid(True)
 
     plt.tight_layout()
     plt.savefig(f"{writer}_evaluate.png")
@@ -116,20 +124,50 @@ def evaluate_dataset(folder_path, csv_path, writer, dataset_name="v2", step=0):
 def evaluate_hr(csv_path):
     df = pd.read_csv(csv_path)
     hr_preds = []
+    extractor = BPExtractor()  # Chỉ tạo một đối tượng extractor để tăng hiệu suất
+    
     for _, row in df.iterrows():
-        video_path = os.path.join(BASE_DIR, "data", "Vid_Heart", row["video_name"])
-        ppg_signal = bp_inference_pipeline.bp_extractor.extract_ppg_from_video(video_path)
-        hr = bp_inference_pipeline.calculate_heart_rate(ppg_signal, SAMPLE_RATE)
+        video_path = os.path.join(BASE_DIR, "data", "nguyen_video", row["video_name"])
+        # Sử dụng hàm mới calculate_heart_rate_from_video
+        hr = extractor.calculate_heart_rate_from_video(video_path)
         hr_preds.append(hr)
-    result_hr = compute_metrics(df["pulse/min"].tolist(), hr_preds)
-    print(f"=== {csv_path.split('/')[-1].split('.')[0].upper()} HR ===")
-    pprint(result_hr)
-    return result_hr
+        # Tính metrics
+    hr_instant_hr = compute_metrics(df["hr_instant_hr"].tolist(), hr_preds)
+    hr_inpulse = compute_metrics(df["hr_inpulse"].tolist(), hr_preds)
+    print(f"=== hr_instant_hr ===")
+    pprint(hr_instant_hr)
+    print(f"=== hr_inpulse ===")
+    pprint(hr_inpulse)
+
+    # Vẽ biểu đồ so sánh ground truth và predict cho từng loại
+    plt.figure(figsize=(15, 4))
+    plt.subplot(1, 3, 1)
+    plt.plot(df["hr_instant_hr"].tolist(), label="hr_instant_hr Truth", marker='o')
+    plt.plot(hr_preds, label="hr_instant_hr Predict", marker='x')
+    plt.title(f"hr_instant_hr")
+    plt.xlabel("Sample")
+    plt.ylabel("HR (bpm)")
+    plt.legend()
+    plt.grid(True)
+
+    plt.subplot(1, 3, 2)
+    plt.plot(df["hr_inpulse"].tolist(), label="hr_inpulse Truth", marker='o')
+    plt.plot(hr_preds, label="hr_inpulse Predict", marker='x')
+    plt.title(f"hr_inpulse")
+    plt.xlabel("Sample")
+    plt.ylabel("HR (bpm)")
+    plt.legend()
+    plt.grid(True)
+    
+    plt.tight_layout()
+    plt.savefig(f"evaluate.png")
+    plt.show()
+
+
 
 if __name__ == "__main__":
-    bp_inference_pipeline = BloodPressureInferencePipeline()
-    train_csv = os.path.join(BASE_DIR, "data", "Vid_Heart", "train.csv")
-    test_csv = os.path.join(BASE_DIR, "data", "Vid_Heart", "test.csv")
-    video_folder = os.path.join(BASE_DIR, "data", "Vid_Heart")
-    evaluate_dataset(video_folder, train_csv, "train")
-    # evaluate_dataset(video_folder, test_csv, "test")
+
+    train_csv = os.path.join(BASE_DIR, "data", "nguyen_video", "truth.csv")
+    video_folder = os.path.join(BASE_DIR, "data", "nguyen_video")
+    evaluate_hr(train_csv)
+

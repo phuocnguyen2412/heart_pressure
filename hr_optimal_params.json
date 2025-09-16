@@ -1,0 +1,16 @@
+{
+    "filter": {
+        "low": 0.7,
+        "high": 3.0,
+        "order": 2
+    },
+    "hr_range": {
+        "min": 50,
+        "max": 180
+    },
+    "peak_detection": {
+        "prominence": 0.3,
+        "width": 6,
+        "height": 0.15
+    }
+}

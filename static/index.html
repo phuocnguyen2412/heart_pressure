@@ -2,29 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Quay Video PPG & Upload</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
-        button { margin: 10px 0; padding: 10px; }
+        :root {
+            --gap: 12px;
+            --pad: 14px;
+            --radius: 10px;
+            --accent: #0a7cff;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: var(--gap); background: #fafafa; }
+        .container { max-width: 720px; margin: 0 auto; }
+        h3 { margin: 8px 0 12px; font-size: 18px; }
+        .controls { position: sticky; top: 0; background: #fafafa; padding-bottom: var(--gap); z-index: 5; }
+        input[type="file"] { width: 100%; }
+        .btn {
+            display: inline-block; width: 100%; margin-top: var(--gap); padding: 14px 16px; border: none;
+            border-radius: var(--radius); background: var(--accent); color: white; font-size: 16px; font-weight: 600;
+        }
+        .btn:disabled { background: #c6dafc; color: #fff; }
         .result-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-            background: #f9f9f9;
+            border: 1px solid #e5e7eb; border-radius: var(--radius);
+            padding: var(--pad); margin-top: var(--gap); background: #ffffff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
         }
-        .loading {
-            color: gray;
-            font-style: italic;
-        }
+        .loading { color: #6b7280; font-style: italic; }
+        .row { display: flex; gap: var(--gap); flex-wrap: wrap; align-items: center; }
+        .row > * { flex: 1 1 auto; }
+        .actions { display: flex; gap: 10px; margin-top: 8px; }
+        .link-btn { display: inline-block; padding: 8px 10px; border-radius: 8px; background: #f3f4f6; color: #111827; text-decoration: none; font-size: 14px; }
+        .pill { display:inline-block; padding: 2px 8px; border-radius: 999px; background:#eef2ff; color:#3730a3; font-size:12px; }
+        video { width: 100%; max-height: 220px; border-radius: 8px; margin-top: 8px; background: #000; }
+        .meta { color:#374151; font-size:14px; line-height:1.5; }
     </style>
 </head>
 <body>
 
-<h3>Chọn một hoặc nhiều video PPG để đo huyết áp</h3>
-<input type="file" id="fileInput" accept="video/mp4,video/webm,video/MOV" multiple />
-<button id="uploadBtn" disabled>Upload tới API</button>
+<div class="container">
+<div class="controls">
+  <h3>Chọn một hoặc nhiều video PPG để đo huyết áp</h3>
+  <input type="file" id="fileInput" accept="video/*" multiple />
+  <button id="uploadBtn" class="btn" disabled>Tải lên và dự đoán</button>
+</div>
 
 <div id="result"></div>
+</div>
 
 <script>
     const fileInput = document.getElementById('fileInput');
@@ -56,13 +79,28 @@
                 const item = document.createElement('div');
                 item.className = "result-item";
                 const now = new Date().toLocaleString();
+                const videoUrl = URL.createObjectURL(file);
 
-                item.innerHTML = `<b>${file.name}</b><br>
-                    <i>Kết quả lúc: ${now}</i><br>
-                    Huyết áp tâm thu (Systolic): <b>${data.systolic.toFixed(1)} mmHg</b><br>
-                    Huyết áp tâm trương (Diastolic): <b>${data.diastolic.toFixed(1)} mmHg</b><br>
-                    Huyết áp trung bình (Mean): <b>${data.mean.toFixed(1)} mmHg</b><br>
-                    Nhịp tim (HR): <b>${data.hr ? data.hr.toFixed(1) : "?"} bpm</b>`;
+                item.innerHTML = `
+                    <div class="row">
+                        <div style="flex:1 1 auto; min-width: 0;">
+                            <div style="font-weight:700; word-break: break-word;">${file.name}</div>
+                            <div class="meta">Kết quả lúc: ${now}</div>
+                            <div class="meta">Huyết áp tâm thu: <b>${Number(data.systolic).toFixed(1)} mmHg</b> <span class="pill">SBP</span></div>
+                            <div class="meta">Huyết áp tâm trương: <b>${Number(data.diastolic).toFixed(1)} mmHg</b> <span class="pill">DBP</span></div>
+                            <div class="meta">Huyết áp trung bình: <b>${Number(data.mean).toFixed(1)} mmHg</b> <span class="pill">MAP</span></div>
+                            <div class="meta">Nhịp tim (HR): <b>${data.hr ? Number(data.hr).toFixed(1) : "?"} bpm</b></div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a class="link-btn" href="${videoUrl}" download="${file.name}">Tải video</a>
+                        <a class="link-btn" href="${videoUrl}" target="_blank">Xem video</a>
+                    </div>
+                    <details style="margin-top:8px;">
+                        <summary>Xem trước video</summary>
+                        <video controls src="${videoUrl}"></video>
+                    </details>
+                `;
 
                 result.replaceChild(item, loadingDiv);
             } catch (err) {

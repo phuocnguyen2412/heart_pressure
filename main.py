@@ -4,16 +4,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 import tempfile
 import os
-
+import uvicorn
 from pydantic import BaseModel
 
-from main_pipeline import BloodPressureInferencePipeline
+from bp_extractor import BPExtractor
 import os
-import torch, torchvision
-print(torch.__version__, torchvision.__version__)
-print("CUDA available:", torch.cuda.is_available())
-if torch.cuda.is_available():
-    print(torch.cuda.get_device_name(0))
+
 # def convert_to_mp4(input_path):
 #     base, _ = os.path.splitext(input_path)
 #     output_path = base + ".mp4"
@@ -44,14 +40,7 @@ class BloodPressureResult(BaseModel):
     hr: float
 
 
-
-@app.on_event("startup")
-async def startup_event():  
-    global bp_inference_pipeline
-    bp_inference_pipeline = BloodPressureInferencePipeline()
-    print("BP Inference Pipeline initialized")
-
-@app.post("/upload_ppg", response_model=BloodPressureResult)
+@app.post("/upload_ppg")
 async def upload_ppg(file: UploadFile = File(...)):
     import time
     start_time = time.time()
@@ -68,19 +57,14 @@ async def upload_ppg(file: UploadFile = File(...)):
 
     print(f"Processing video file: {temp_path}")
         
-    output = bp_inference_pipeline.predict_test_data(temp_path)
+    output = BPExtractor().calculate_heart_rate_from_video(temp_path)
 
     # Xóa file tạm
     os.remove(temp_path)
     end_time = time.time()
     print(f"Processing time: {end_time - start_time:.2f} seconds")
 
-    return BloodPressureResult(
-        systolic=float(output['systolic']),
-        diastolic=float(output['diastolic']),
-        mean=float(output['mean']),
-        hr= float(output['hr_by_ppg']),
-    )
+    return BloodPressureResult(hr=output, systolic=0, diastolic=0, mean=0)
 
 @app.get("/ping")
 async def ping():
@@ -92,3 +76,5 @@ app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 
 
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8081, reload=True)
